@@ -12,6 +12,7 @@
 		A4BFCDF21E8986410024CC26 /* SwiftyNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BFCDE41E8986410024CC26 /* SwiftyNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4BFCDFC1E8987D20024CC26 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFB1E8987D20024CC26 /* RoundedView.swift */; };
 		A4BFCDFE1E898A410024CC26 /* RoundedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */; };
+		A4BFCE001E898EC60024CC26 /* SwiftyNotificationsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		A4BFCDF11E8986410024CC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BFCDFB1E8987D20024CC26 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedViewTests.swift; sourceTree = "<group>"; };
+		A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				A4BFCDE41E8986410024CC26 /* SwiftyNotifications.h */,
 				A4BFCDE51E8986410024CC26 /* Info.plist */,
 				A4BFCDFB1E8987D20024CC26 /* RoundedView.swift */,
+				A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */,
 			);
 			path = SwiftyNotifications;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BFCE001E898EC60024CC26 /* SwiftyNotificationsColor.swift in Sources */,
 				A4BFCDFC1E8987D20024CC26 /* RoundedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
