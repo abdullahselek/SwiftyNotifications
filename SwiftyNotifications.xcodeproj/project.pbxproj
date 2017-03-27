@@ -10,6 +10,8 @@
 		A4BFCDEB1E8986410024CC26 /* SwiftyNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BFCDE11E8986410024CC26 /* SwiftyNotifications.framework */; };
 		A4BFCDF01E8986410024CC26 /* SwiftyNotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDEF1E8986410024CC26 /* SwiftyNotificationsTests.swift */; };
 		A4BFCDF21E8986410024CC26 /* SwiftyNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BFCDE41E8986410024CC26 /* SwiftyNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4BFCDFC1E8987D20024CC26 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFB1E8987D20024CC26 /* RoundedView.swift */; };
+		A4BFCDFE1E898A410024CC26 /* RoundedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		A4BFCDEA1E8986410024CC26 /* SwiftyNotificationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyNotificationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BFCDEF1E8986410024CC26 /* SwiftyNotificationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsTests.swift; sourceTree = "<group>"; };
 		A4BFCDF11E8986410024CC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4BFCDFB1E8987D20024CC26 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			children = (
 				A4BFCDE41E8986410024CC26 /* SwiftyNotifications.h */,
 				A4BFCDE51E8986410024CC26 /* Info.plist */,
+				A4BFCDFB1E8987D20024CC26 /* RoundedView.swift */,
 			);
 			path = SwiftyNotifications;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			children = (
 				A4BFCDEF1E8986410024CC26 /* SwiftyNotificationsTests.swift */,
 				A4BFCDF11E8986410024CC26 /* Info.plist */,
+				A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */,
 			);
 			path = SwiftyNotificationsTests;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					A4BFCDE01E8986410024CC26 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					A4BFCDE91E8986410024CC26 = {
@@ -196,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BFCDFC1E8987D20024CC26 /* RoundedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BFCDFE1E898A410024CC26 /* RoundedViewTests.swift in Sources */,
 				A4BFCDF01E8986410024CC26 /* SwiftyNotificationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +329,7 @@
 		A4BFCDF61E8986410024CC26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -332,6 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahselek.SwiftyNotifications;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -339,6 +350,7 @@
 		A4BFCDF71E8986410024CC26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -358,6 +370,7 @@
 		A4BFCDF91E8986410024CC26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftyNotificationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahselek.SwiftyNotificationsTests;
@@ -369,6 +382,7 @@
 		A4BFCDFA1E8986410024CC26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SwiftyNotificationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahselek.SwiftyNotificationsTests;
