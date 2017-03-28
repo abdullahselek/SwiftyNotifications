@@ -16,5 +16,10 @@ class SwiftyNotificationsDrawingsTests: XCTestCase {
         let checkmark = SwiftyNotificationsDrawings.checkMarkImage(color: UIColor.white)
         XCTAssertNotNil(checkmark)
     }
+
+    func testCreateCrossImage() {
+        let cross = SwiftyNotificationsDrawings.crossImage(color: UIColor.white)
+        XCTAssertNotNil(cross)
+    }
     
 }

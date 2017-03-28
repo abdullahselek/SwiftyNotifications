@@ -46,4 +46,24 @@ class SwiftyNotificationsDrawings {
         return checkmark!
     }
 
+    static func drawCross(color: UIColor) {
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 10.0, y: 10.0))
+        bezierPath.addLine(to: CGPoint(x: 53.0, y: 53.0))
+        bezierPath.move(to: CGPoint(x: 10.0, y: 53.0))
+        bezierPath.addLine(to: CGPoint(x: 53.0, y: 10.0))
+        bezierPath.lineCapStyle = .round
+        color.setStroke()
+        bezierPath.lineWidth = 10
+        bezierPath.stroke()
+    }
+
+    static func crossImage(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 63.0, height: 63.0), false, 0)
+        drawCross(color: color)
+        let cross = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return cross!
+    }
+
 }
