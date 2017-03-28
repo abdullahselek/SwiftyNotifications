@@ -21,5 +21,10 @@ class SwiftyNotificationsDrawingsTests: XCTestCase {
         let cross = SwiftyNotificationsDrawings.crossImage(color: UIColor.white)
         XCTAssertNotNil(cross)
     }
+
+    func testCreateInfoImage() {
+        let info = SwiftyNotificationsDrawings.infoImage(color: UIColor.white)
+        XCTAssertNotNil(info)
+    }
     
 }

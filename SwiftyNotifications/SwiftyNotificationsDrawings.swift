@@ -66,4 +66,50 @@ class SwiftyNotificationsDrawings {
         return cross!
     }
 
+    static func drawInfo(color: UIColor) {
+        let info = UIBezierPath()
+        info.move(to: CGPoint(x: 45.66, y: 15.96))
+        info.addCurve(to: CGPoint(x: 45.66, y: 5.22),
+                      controlPoint1: CGPoint(x: 48.78, y: 12.99),
+                      controlPoint2: CGPoint(x: 48.78, y: 8.19))
+        info.addCurve(to: CGPoint(x: 34.34, y: 5.22),
+                      controlPoint1: CGPoint(x: 42.53, y: 2.26),
+                      controlPoint2: CGPoint(x: 37.47, y: 2.26))
+        info.addCurve(to: CGPoint(x: 34.34, y: 15.96),
+                      controlPoint1: CGPoint(x: 32.22, y: 8.19),
+                      controlPoint2: CGPoint(x: 31.22, y: 12.99))
+        info.addCurve(to: CGPoint(x: 45.66, y: 15.96),
+                      controlPoint1: CGPoint(x: 37.47, y: 18.92),
+                      controlPoint2: CGPoint(x: 42.53, y: 18.92))
+        info.close()
+        info.move(to: CGPoint(x: 48.0, y: 69.41))
+        info.addCurve(to: CGPoint(x: 40.0, y: 77.0),
+                      controlPoint1: CGPoint(x: 48.0, y: 73.58),
+                      controlPoint2: CGPoint(x: 44.4, y: 77.0))
+        info.addLine(to: CGPoint(x: 40.0, y: 77.0))
+        info.addCurve(to: CGPoint(x: 32.0, y: 69.41),
+                      controlPoint1: CGPoint(x: 35.6, y: 77.0),
+                      controlPoint2: CGPoint(x: 32.0, y: 73.58))
+        info.addLine(to: CGPoint(x: 32.0, y: 35.26))
+        info.addCurve(to: CGPoint(x: 40.0, y: 27.67),
+                      controlPoint1: CGPoint(x: 32.0, y: 31.08),
+                      controlPoint2: CGPoint(x: 35.6, y: 27.67))
+        info.addLine(to: CGPoint(x: 40.0, y: 27.67))
+        info.addCurve(to: CGPoint(x: 48.0, y: 35.26),
+                      controlPoint1: CGPoint(x: 44.4, y: 27.67),
+                      controlPoint2: CGPoint(x: 48.0, y: 31.08))
+        info.addLine(to: CGPoint(x: 48.0, y: 69.41))
+        info.close()
+        color.setFill()
+        info.fill()
+    }
+
+    static func infoImage(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 80.0, height: 80.0), false, 0)
+        drawInfo(color: color)
+        let info = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return info!
+    }
+
 }
