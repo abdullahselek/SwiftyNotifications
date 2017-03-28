@@ -26,4 +26,24 @@ import UIKit
 
 class SwiftyNotificationsDrawings {
 
+    static func drawCheckmark(color: UIColor) {
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 8.0, y: 37.0))
+        bezierPath.addLine(to: CGPoint(x: 27.0, y: 56.0))
+        bezierPath.move(to: CGPoint(x: 27.0, y: 56.0))
+        bezierPath.addLine(to: CGPoint(x: 75.0, y: 8.0))
+        bezierPath.lineCapStyle = .round
+        color.setStroke()
+        bezierPath.lineWidth = 14
+        bezierPath.stroke()
+    }
+
+    static func checkMarkImage(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 85, height: 63), false, 0)
+        drawCheckmark(color: color)
+        let checkmark = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return checkmark!
+    }
+
 }

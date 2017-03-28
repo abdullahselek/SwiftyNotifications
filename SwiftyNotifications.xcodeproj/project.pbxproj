@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A4307E591E8AE075008033EE /* SwiftyNotificationsDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4307E581E8AE075008033EE /* SwiftyNotificationsDrawings.swift */; };
+		A4307E5B1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4307E5A1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift */; };
 		A4BFCDEB1E8986410024CC26 /* SwiftyNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BFCDE11E8986410024CC26 /* SwiftyNotifications.framework */; };
 		A4BFCDF01E8986410024CC26 /* SwiftyNotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDEF1E8986410024CC26 /* SwiftyNotificationsTests.swift */; };
 		A4BFCDF21E8986410024CC26 /* SwiftyNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = A4BFCDE41E8986410024CC26 /* SwiftyNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		A4307E581E8AE075008033EE /* SwiftyNotificationsDrawings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsDrawings.swift; sourceTree = "<group>"; };
+		A4307E5A1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsDrawingsTests.swift; sourceTree = "<group>"; };
 		A4BFCDE11E8986410024CC26 /* SwiftyNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BFCDE41E8986410024CC26 /* SwiftyNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyNotifications.h; sourceTree = "<group>"; };
 		A4BFCDE51E8986410024CC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				A4BFCDEF1E8986410024CC26 /* SwiftyNotificationsTests.swift */,
 				A4BFCDF11E8986410024CC26 /* Info.plist */,
 				A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */,
+				A4307E5A1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift */,
 			);
 			path = SwiftyNotificationsTests;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4307E5B1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift in Sources */,
 				A4BFCDFE1E898A410024CC26 /* RoundedViewTests.swift in Sources */,
 				A4BFCDF01E8986410024CC26 /* SwiftyNotificationsTests.swift in Sources */,
 			);
