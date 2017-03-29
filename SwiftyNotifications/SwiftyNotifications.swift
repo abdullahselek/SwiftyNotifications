@@ -35,8 +35,17 @@ public enum SwiftyNotificationsStyle {
     case blurLight
 }
 
+@objc protocol SwiftyNotificationsDelegate: class {
+
+    @objc optional func willShowNotification(notification: SwiftyNotifications)
+    @objc optional func didShowNotification(notification: SwiftyNotifications)
+    @objc optional func willDismissNotification(notification: SwiftyNotifications)
+    @objc optional func didDismissNotification(notification: SwiftyNotifications)
+
+}
+
 public class SwiftyNotifications: UIView {
 
-    
+
 
 }
