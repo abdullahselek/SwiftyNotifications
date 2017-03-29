@@ -24,7 +24,18 @@
 
 import UIKit
 
-class SwiftyNotifications: UIView {
+public enum SwiftyNotificationsStyle {
+    case normal
+    case error
+    case success
+    case info
+    case warning
+    case custom
+    case blurDark
+    case blurLight
+}
+
+public class SwiftyNotifications: UIView {
 
     
 
