@@ -35,7 +35,7 @@ public enum SwiftyNotificationsStyle {
     case blurLight
 }
 
-@objc protocol SwiftyNotificationsDelegate: class {
+@objc public protocol SwiftyNotificationsDelegate: class {
 
     @objc optional func willShowNotification(notification: SwiftyNotifications)
     @objc optional func didShowNotification(notification: SwiftyNotifications)
@@ -48,6 +48,12 @@ typealias SwiftyNotificationsTouchHandler = () -> Void
 
 public class SwiftyNotifications: UIView {
 
-
+    public var titleLabel: UILabel!
+    public var subtitleLabel: UILabel!
+    public var leftAccessoryView: UIView!
+    public var rightAccessoryView: UIView!
+    public var style: SwiftyNotificationsStyle!
+    public var fromTop: Bool!
+    public var delegate: SwiftyNotificationsDelegate!
 
 }
