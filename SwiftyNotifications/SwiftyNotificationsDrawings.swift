@@ -112,4 +112,43 @@ class SwiftyNotificationsDrawings {
         return info!
     }
 
+    static func drawWarning(backgroundColor: UIColor, foregroundColor: UIColor) {
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 54.0, y: 10.0))
+        bezierPath.addLine(to: CGPoint(x: 11.0, y: 81.0))
+        bezierPath.addLine(to: CGPoint(x: 54.0, y: 81.0))
+        bezierPath.addLine(to: CGPoint(x: 97.0, y: 81.0))
+        bezierPath.addLine(to: CGPoint(x: 54.0, y: 10.0))
+        bezierPath.lineCapStyle = .round
+        bezierPath.lineJoinStyle = .round
+        backgroundColor.setFill()
+        bezierPath.fill()
+        backgroundColor.setStroke()
+        bezierPath.lineWidth = 14
+        bezierPath.stroke()
+
+        let bezier2Path = UIBezierPath()
+        bezier2Path.move(to: CGPoint(x: 54.0, y: 48.0))
+        bezier2Path.addLine(to: CGPoint(x: 54.0, y: 71.0))
+        bezier2Path.lineCapStyle = .round
+        bezier2Path.lineJoinStyle = .round
+        foregroundColor.setFill()
+        bezier2Path.fill()
+        foregroundColor.setStroke()
+        bezier2Path.lineWidth = 14
+        bezier2Path.stroke()
+
+        let oval = UIBezierPath(ovalIn: CGRect(x: 47.0, y: 19.0, width: 14.0, height: 14.0))
+        foregroundColor.setFill()
+        oval.fill()
+    }
+
+    static func warningImage(backgroundColor: UIColor, foregroundColor: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 108.0, height: 92.0), false, 0)
+        drawWarning(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
+        let warning = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return warning!
+    }
+
 }

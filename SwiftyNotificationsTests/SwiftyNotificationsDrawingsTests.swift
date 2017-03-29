@@ -26,5 +26,10 @@ class SwiftyNotificationsDrawingsTests: XCTestCase {
         let info = SwiftyNotificationsDrawings.infoImage(color: UIColor.white)
         XCTAssertNotNil(info)
     }
+
+    func testCreateWarningImage() {
+        let warning = SwiftyNotificationsDrawings.warningImage(backgroundColor: UIColor.blue, foregroundColor: UIColor.white)
+        XCTAssertNotNil(warning)
+    }
     
 }
