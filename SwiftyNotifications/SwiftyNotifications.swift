@@ -44,6 +44,8 @@ public enum SwiftyNotificationsStyle {
 
 }
 
+typealias SwiftyNotificationsTouchHandler = () -> Void
+
 public class SwiftyNotifications: UIView {
 
 
