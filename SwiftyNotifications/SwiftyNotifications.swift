@@ -65,4 +65,20 @@ public class SwiftyNotifications: UIView {
         return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! UIView
     }
 
+    internal func setTitle(title: String, subtitle: String?) {
+        if !title.isEmpty {
+            titleLabel.text = title
+        }
+        guard let subtitleText = subtitle else {
+            subtitleLabel.isHidden = true
+            titleLabelTopConstraint.constant += 22
+            return
+        }
+        if titleLabelTopConstraint.constant == 32 {
+            titleLabelTopConstraint.constant = 10
+            subtitleLabel.isHidden = false
+        }
+        subtitleLabel.text = subtitleText
+    }
+
 }
