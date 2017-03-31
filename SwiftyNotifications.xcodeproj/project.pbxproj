@@ -16,6 +16,7 @@
 		A4BFCDFE1E898A410024CC26 /* RoundedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */; };
 		A4BFCE001E898EC60024CC26 /* SwiftyNotificationsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */; };
 		A4D504531E8C2CEA0037927E /* SwiftyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D504521E8C2CEA0037927E /* SwiftyNotifications.swift */; };
+		A4F6C69A1E8ED79F00183984 /* SwiftyNotifications.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F6C6991E8ED79F00183984 /* SwiftyNotifications.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedViewTests.swift; sourceTree = "<group>"; };
 		A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsColor.swift; sourceTree = "<group>"; };
 		A4D504521E8C2CEA0037927E /* SwiftyNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotifications.swift; sourceTree = "<group>"; };
+		A4F6C6991E8ED79F00183984 /* SwiftyNotifications.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftyNotifications.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */,
 				A4307E581E8AE075008033EE /* SwiftyNotificationsDrawings.swift */,
 				A4D504521E8C2CEA0037927E /* SwiftyNotifications.swift */,
+				A4F6C6991E8ED79F00183984 /* SwiftyNotifications.xib */,
 			);
 			path = SwiftyNotifications;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4F6C69A1E8ED79F00183984 /* SwiftyNotifications.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
