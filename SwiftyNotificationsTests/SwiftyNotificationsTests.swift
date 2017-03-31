@@ -62,5 +62,14 @@ class SwiftyNotificationsTests: XCTestCase {
         let newSubviewCount = swiftNotifications.subviews.count
         XCTAssertEqual(newSubviewCount, subviewCount + 2)
     }
+
+    func testRemoveBlurViews() {
+        XCTAssertNotNil(swiftNotifications)
+        swiftNotifications.addBlurView(blurStyle: .dark)
+        let subviewCount = swiftNotifications.subviews.count
+        swiftNotifications.removeBlurViews()
+        let newSubviewCount = swiftNotifications.subviews.count
+        XCTAssertEqual(newSubviewCount, subviewCount - 2)
+    }
     
 }

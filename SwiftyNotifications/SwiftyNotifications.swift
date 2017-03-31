@@ -108,6 +108,17 @@ public class SwiftyNotifications: UIView {
                                          constant: 0.0))
     }
 
+    internal func removeBlurViews() {
+        if subviews.contains(blurView) {
+            blurView.removeFromSuperview()
+            blurView = nil
+        }
+        if subviews.contains(vibrancyView) {
+            vibrancyView.removeFromSuperview()
+            vibrancyView = nil
+        }
+    }
+
     internal func setTitle(title: String, subtitle: String?) {
         if !title.isEmpty {
             titleLabel.text = title
