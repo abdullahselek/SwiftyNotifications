@@ -52,6 +52,9 @@ public class SwiftyNotifications: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
+    @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var subtitleLabelBottomConstraint: NSLayoutConstraint!
+
     public var style: SwiftyNotificationsStyle!
     public var fromTop: Bool!
     public var delegate: SwiftyNotificationsDelegate!

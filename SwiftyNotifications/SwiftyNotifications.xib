@@ -56,7 +56,9 @@
             <connections>
                 <outlet property="leftAccessoryView" destination="dhn-cQ-yz1" id="4mI-p1-lND"/>
                 <outlet property="subtitleLabel" destination="db1-he-1XM" id="tou-f4-Ay5"/>
+                <outlet property="subtitleLabelBottomConstraint" destination="L9m-xp-ZD1" id="MqQ-JK-Efr"/>
                 <outlet property="titleLabel" destination="0Wy-9M-xkh" id="p1m-0b-eWb"/>
+                <outlet property="titleLabelTopConstraint" destination="JXV-sl-WiL" id="bOA-oL-jHg"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="-35.5"/>
         </view>
