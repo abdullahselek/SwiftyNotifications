@@ -12,8 +12,13 @@ import XCTest
 
 class SwiftyNotificationsTests: XCTestCase {
 
+    var swiftNotifications: SwiftyNotifications!
+
+    override func setUp() {
+        swiftNotifications = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
+    }
+
     func testInstanceFromNib() {
-        let swiftNotifications = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
         XCTAssertNotNil(swiftNotifications)
         XCTAssertNotNil(swiftNotifications.leftAccessoryView)
         XCTAssertNotNil(swiftNotifications.titleLabel)
@@ -21,7 +26,6 @@ class SwiftyNotificationsTests: XCTestCase {
     }
 
     func testSetTitleAndSubtitle_whenSubtitleIsEmpty() {
-        let swiftNotifications = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
         XCTAssertNotNil(swiftNotifications)
         swiftNotifications.setTitle(title: "Title", subtitle: nil)
         XCTAssertEqual(swiftNotifications.titleLabel.text, "Title")
@@ -30,7 +34,6 @@ class SwiftyNotificationsTests: XCTestCase {
     }
 
     func testSetTitleAndSubtitle_whenSubtitleNotEmpty() {
-        let swiftNotifications = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
         XCTAssertNotNil(swiftNotifications)
         swiftNotifications.setTitle(title: "Title", subtitle: "Subtitle")
         XCTAssertEqual(swiftNotifications.titleLabel.text, "Title")
@@ -40,7 +43,6 @@ class SwiftyNotificationsTests: XCTestCase {
     }
 
     func testSetTitleAndSubtitle_withEmptySubtitle_thenNotEmptySubtitle() {
-        let swiftNotifications = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
         XCTAssertNotNil(swiftNotifications)
         swiftNotifications.setTitle(title: "Title", subtitle: nil)
         XCTAssertEqual(swiftNotifications.titleLabel.text, "Title")
