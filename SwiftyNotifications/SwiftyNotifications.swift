@@ -48,12 +48,16 @@ typealias SwiftyNotificationsTouchHandler = () -> Void
 
 public class SwiftyNotifications: UIView {
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var leftAccessoryView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var subtitleLabelBottomConstraint: NSLayoutConstraint!
+
+    private var blurView: UIVisualEffectView!
+    private var vibrancyView: UIVisualEffectView!
 
     public var style: SwiftyNotificationsStyle!
     public var fromTop: Bool!
@@ -63,6 +67,45 @@ public class SwiftyNotifications: UIView {
         let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
         let bundle = Bundle(identifier: bundleIdentifier)
         return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! UIView
+    }
+
+    internal func addBlurView(blurStyle: UIBlurEffectStyle) {
+        let blurEffect = UIBlurEffect(style: blurStyle)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        let visualEffect = UIVibrancyEffect(blurEffect: blurEffect)
+        vibrancyView = UIVisualEffectView(effect: visualEffect)
+        vibrancyView.translatesAutoresizingMaskIntoConstraints = false
+        insertSubview(blurView, belowSubview: contentView)
+        addConstraint(NSLayoutConstraint(item: blurView,
+                                         attribute: .height,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .height,
+                                         multiplier: 1.0,
+                                         constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: blurView,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .width,
+                                         multiplier: 1.0,
+                                         constant: 0.0))
+        insertSubview(vibrancyView, belowSubview: contentView)
+        addConstraint(NSLayoutConstraint(item: vibrancyView,
+                                         attribute: .height,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .height,
+                                         multiplier: 1.0,
+                                         constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: vibrancyView,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .width,
+                                         multiplier: 1.0,
+                                         constant: 0.0))
     }
 
     internal func setTitle(title: String, subtitle: String?) {

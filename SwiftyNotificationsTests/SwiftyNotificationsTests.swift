@@ -54,5 +54,13 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(swiftNotifications.subtitleLabel.text, "Subtitle")
         XCTAssertFalse(swiftNotifications.subtitleLabel.isHidden)
     }
+
+    func testAddBlurView() {
+        XCTAssertNotNil(swiftNotifications)
+        let subviewCount = swiftNotifications.subviews.count
+        swiftNotifications.addBlurView(blurStyle: .dark)
+        let newSubviewCount = swiftNotifications.subviews.count
+        XCTAssertEqual(newSubviewCount, subviewCount + 2)
+    }
     
 }
