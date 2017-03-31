@@ -56,4 +56,10 @@ public class SwiftyNotifications: UIView {
     public var fromTop: Bool!
     public var delegate: SwiftyNotificationsDelegate!
 
+    class func instanceFromNib() -> UIView {
+        let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
+        let bundle = Bundle(identifier: bundleIdentifier)
+        return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! UIView
+    }
+
 }
