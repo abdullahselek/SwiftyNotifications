@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SwiftyNotifications" customModule="SwiftyNotifications" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -53,6 +53,11 @@
                 <constraint firstItem="dhn-cQ-yz1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="pIV-oq-eNM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftAccessoryView" destination="dhn-cQ-yz1" id="4mI-p1-lND"/>
+                <outlet property="subtitleLabel" destination="db1-he-1XM" id="tou-f4-Ay5"/>
+                <outlet property="titleLabel" destination="0Wy-9M-xkh" id="p1m-0b-eWb"/>
+            </connections>
             <point key="canvasLocation" x="25.5" y="-35.5"/>
         </view>
     </objects>

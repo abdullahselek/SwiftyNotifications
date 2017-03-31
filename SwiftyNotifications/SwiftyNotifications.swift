@@ -48,10 +48,10 @@ typealias SwiftyNotificationsTouchHandler = () -> Void
 
 public class SwiftyNotifications: UIView {
 
-    public var titleLabel: UILabel!
-    public var subtitleLabel: UILabel!
-    public var leftAccessoryView: UIView!
-    public var rightAccessoryView: UIView!
+    @IBOutlet weak var leftAccessoryView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+
     public var style: SwiftyNotificationsStyle!
     public var fromTop: Bool!
     public var delegate: SwiftyNotificationsDelegate!
