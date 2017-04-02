@@ -81,6 +81,27 @@ public class SwiftyNotifications: UIView {
 
     public static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
+                                 subtitle: String) -> SwiftyNotifications {
+        let notification = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
+        notification.setTitle(title: title, subtitle: subtitle)
+        notification.customize(style: style)
+        return notification
+    }
+
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
+                                 subtitle: String,
+                                 dismissDelay: TimeInterval) -> SwiftyNotifications {
+        let notification = SwiftyNotifications.withStyle(style: style,
+                                                         title: title,
+                                                         subtitle: subtitle,
+                                                         dismissDelay: dismissDelay,
+                                                         touchHandler: nil)
+        return notification
+    }
+
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
                                  subtitle: String,
                                  dismissDelay: TimeInterval,
                                  touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
@@ -95,15 +116,6 @@ public class SwiftyNotifications: UIView {
             let tapHandler = UITapGestureRecognizer(target: notification, action: #selector(SwiftyNotifications.handleTap))
             notification.addGestureRecognizer(tapHandler)
         }
-        return notification
-    }
-
-    public static func withStyle(style: SwiftyNotificationsStyle,
-                                 title: String,
-                                 subtitle: String) -> SwiftyNotifications {
-        let notification = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
-        notification.setTitle(title: title, subtitle: subtitle)
-        notification.customize(style: style)
         return notification
     }
 
