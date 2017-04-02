@@ -44,7 +44,7 @@ public enum SwiftyNotificationsStyle {
 
 }
 
-typealias SwiftyNotificationsTouchHandler = () -> Void
+public typealias SwiftyNotificationsTouchHandler = () -> Void
 
 public class SwiftyNotifications: UIView {
 
@@ -59,14 +59,51 @@ public class SwiftyNotifications: UIView {
     private var blurView: UIVisualEffectView!
     private var vibrancyView: UIVisualEffectView!
 
-    public var style: SwiftyNotificationsStyle!
-    public var fromTop: Bool!
-    public var delegate: SwiftyNotificationsDelegate!
+    private var style: SwiftyNotificationsStyle!
+    private var fromTop: Bool!
+    private var delegate: SwiftyNotificationsDelegate!
+    private var dismissDelay: TimeInterval?
+    private var touchHandler: SwiftyNotificationsTouchHandler?
 
     class func instanceFromNib() -> UIView {
         let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
         let bundle = Bundle(identifier: bundleIdentifier)
         return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! UIView
+    }
+
+    internal override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
+                                 subtitle: String,
+                                 dismissDelay: TimeInterval,
+                                 touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
+        let notification = SwiftyNotifications.withStyle(style: style,
+                                                         title: title,
+                                                         subtitle: subtitle)
+        if dismissDelay > 0 {
+            notification.dismissDelay = dismissDelay
+        }
+        if touchHandler != nil {
+            notification.touchHandler = touchHandler
+            let tapHandler = UITapGestureRecognizer(target: notification, action: #selector(SwiftyNotifications.handleTap))
+            notification.addGestureRecognizer(tapHandler)
+        }
+        return notification
+    }
+
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
+                                 subtitle: String) -> SwiftyNotifications {
+        let notification = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
+        notification.setTitle(title: title, subtitle: subtitle)
+        return notification
     }
 
     internal func addBlurView(blurStyle: UIBlurEffectStyle) {
@@ -133,6 +170,12 @@ public class SwiftyNotifications: UIView {
             subtitleLabel.isHidden = false
         }
         subtitleLabel.text = subtitleText
+    }
+
+    internal func handleTap() {
+        if touchHandler != nil {
+            touchHandler!()
+        }
     }
 
 }

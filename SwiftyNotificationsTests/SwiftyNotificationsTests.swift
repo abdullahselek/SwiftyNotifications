@@ -71,5 +71,24 @@ class SwiftyNotificationsTests: XCTestCase {
         let newSubviewCount = swiftNotifications.subviews.count
         XCTAssertEqual(newSubviewCount, subviewCount - 2)
     }
+
+    func testInit() {
+        let frame = CGRect(x: 0.0,
+                            y: 0.0,
+                            width: 200.0,
+                            height: 80)
+        let notification = SwiftyNotifications(frame: frame)
+        XCTAssertNotNil(notification)
+        XCTAssertEqual(notification.frame, frame)
+    }
+
+    func testWithStyle_whenAllParametersSet() {
+        let notification = SwiftyNotifications.withStyle(style: .info, title: "Title", subtitle: "Subtitle", dismissDelay: 2.0) {
+
+        }
+        XCTAssertNotNil(notification)
+        XCTAssertEqual(notification.titleLabel.text, "Title")
+        XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
+    }
     
 }
