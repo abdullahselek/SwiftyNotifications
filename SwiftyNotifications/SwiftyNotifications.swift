@@ -65,10 +65,10 @@ public class SwiftyNotifications: UIView {
     private var dismissDelay: TimeInterval?
     private var touchHandler: SwiftyNotificationsTouchHandler?
 
-    class func instanceFromNib() -> UIView {
+    class func instanceFromNib() -> SwiftyNotifications {
         let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
         let bundle = Bundle(identifier: bundleIdentifier)
-        return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! UIView
+        return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! SwiftyNotifications
     }
 
     internal override init(frame: CGRect) {
@@ -82,9 +82,10 @@ public class SwiftyNotifications: UIView {
     public static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
                                  subtitle: String) -> SwiftyNotifications {
-        let notification = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
-        notification.setTitle(title: title, subtitle: subtitle)
-        notification.customize(style: style)
+        let notification = SwiftyNotifications.withStyle(style: style,
+                                                         title: title,
+                                                         subtitle: subtitle,
+                                                         dismissDelay: 0)
         return notification
     }
 
@@ -105,9 +106,7 @@ public class SwiftyNotifications: UIView {
                                  subtitle: String,
                                  dismissDelay: TimeInterval,
                                  touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
-        let notification = SwiftyNotifications.withStyle(style: style,
-                                                         title: title,
-                                                         subtitle: subtitle)
+        let notification = SwiftyNotifications.instanceFromNib()
         if dismissDelay > 0 {
             notification.dismissDelay = dismissDelay
         }
@@ -116,6 +115,8 @@ public class SwiftyNotifications: UIView {
             let tapHandler = UITapGestureRecognizer(target: notification, action: #selector(SwiftyNotifications.handleTap))
             notification.addGestureRecognizer(tapHandler)
         }
+        notification.setTitle(title: title, subtitle: subtitle)
+        notification.customize(style: style)
         return notification
     }
 

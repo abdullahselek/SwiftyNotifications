@@ -15,7 +15,7 @@ class SwiftyNotificationsTests: XCTestCase {
     var swiftNotifications: SwiftyNotifications!
 
     override func setUp() {
-        swiftNotifications = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
+        swiftNotifications = SwiftyNotifications.instanceFromNib()
     }
 
     func testInstanceFromNib() {
@@ -82,8 +82,30 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(notification.frame, frame)
     }
 
+    func testWithStyle_withThreeParameter() {
+        let notification = SwiftyNotifications.withStyle(style: .normal,
+                                                         title: "Title",
+                                                         subtitle: "Subtitle")
+        XCTAssertNotNil(notification)
+        XCTAssertEqual(notification.titleLabel.text, "Title")
+        XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
+    }
+
+    func testWithStyle_withFourParameters() {
+        let notification = SwiftyNotifications.withStyle(style: .normal,
+                                                         title: "Title",
+                                                         subtitle: "Subtitle",
+                                                         dismissDelay: 1.0)
+        XCTAssertNotNil(notification)
+        XCTAssertEqual(notification.titleLabel.text, "Title")
+        XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
+    }
+
     func testWithStyle_whenAllParametersSet() {
-        let notification = SwiftyNotifications.withStyle(style: .info, title: "Title", subtitle: "Subtitle", dismissDelay: 2.0) {
+        let notification = SwiftyNotifications.withStyle(style: .info,
+                                                         title: "Title",
+                                                         subtitle: "Subtitle",
+                                                         dismissDelay: 2.0) {
 
         }
         XCTAssertNotNil(notification)
