@@ -103,6 +103,7 @@ public class SwiftyNotifications: UIView {
                                  subtitle: String) -> SwiftyNotifications {
         let notification = SwiftyNotifications.instanceFromNib() as! SwiftyNotifications
         notification.setTitle(title: title, subtitle: subtitle)
+        notification.customize(style: style)
         return notification
     }
 
@@ -146,11 +147,11 @@ public class SwiftyNotifications: UIView {
     }
 
     internal func removeBlurViews() {
-        if subviews.contains(blurView) {
+        if blurView != nil && subviews.contains(blurView) {
             blurView.removeFromSuperview()
             blurView = nil
         }
-        if subviews.contains(vibrancyView) {
+        if vibrancyView != nil && subviews.contains(vibrancyView) {
             vibrancyView.removeFromSuperview()
             vibrancyView = nil
         }
@@ -170,6 +171,94 @@ public class SwiftyNotifications: UIView {
             subtitleLabel.isHidden = false
         }
         subtitleLabel.text = subtitleText
+    }
+
+    internal func customize(style: SwiftyNotificationsStyle) {
+        removeBlurViews()
+        switch style {
+        case .blurDark:
+            let primaryColor = UIColor.clear
+            let secondaryColor = UIColor.white
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+            addBlurView(blurStyle: .dark)
+        case .blurLight:
+            let primaryColor = UIColor.clear
+            let secondaryColor = UIColor.black
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+            addBlurView(blurStyle: .light)
+        case .custom:
+            let primaryColor = UIColor.white
+            let secondaryColor = UIColor.black
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .error:
+            let primaryColor = UIColor.snRedColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .success:
+            let primaryColor = UIColor.snGreenColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .info:
+            let primaryColor = UIColor.snOrangeColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .warning:
+            let primaryColor = UIColor.snYellowColor()
+            let secondaryColor = UIColor.snBlackColor()
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .normal:
+            let primaryColor = UIColor.snBlueColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        }
+        setAccessoryView(style: style)
+    }
+
+    internal func setAccessoryView(style: SwiftyNotificationsStyle) {
+        var accessoryImage: UIImage!
+        switch style {
+        case .blurDark, .blurLight, .custom:
+            leftAccessoryView.isHidden = true
+            break
+        case .error:
+            accessoryImage = SwiftyNotificationsDrawings.crossImage(color: UIColor.snRedColor())
+            leftAccessoryView.backgroundColor = UIColor.snWhiteColor()
+            break
+        case .success:
+            accessoryImage = SwiftyNotificationsDrawings.checkMarkImage(color: UIColor.snGreenColor())
+            leftAccessoryView.backgroundColor = UIColor.snWhiteColor()
+            break
+        case .info:
+            accessoryImage = SwiftyNotificationsDrawings.infoImage(color: UIColor.snOrangeColor())
+            leftAccessoryView.backgroundColor = UIColor.snWhiteColor()
+            break
+        case .warning:
+            accessoryImage = SwiftyNotificationsDrawings.warningImage(backgroundColor: UIColor.snYellowColor(),
+                                                             foregroundColor: UIColor.snBlackColor())
+            leftAccessoryView.backgroundColor = UIColor.snBlackColor()
+            break
+        case .normal:
+            accessoryImage = SwiftyNotificationsDrawings.infoImage(color: UIColor.snBlueColor())
+            leftAccessoryView.backgroundColor = UIColor.snWhiteColor()
+            break
+        }
+        leftAccessoryView.image = accessoryImage
     }
 
     internal func handleTap() {

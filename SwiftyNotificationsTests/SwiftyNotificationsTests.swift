@@ -90,5 +90,43 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(notification.titleLabel.text, "Title")
         XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
     }
-    
+
+    func testCustomizeWithBlurDark() {
+        let subviewCount = swiftNotifications.subviews.count
+        swiftNotifications.customize(style: .blurDark)
+        let newSubviewCount = swiftNotifications.subviews.count
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.clear)
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.white)
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.white)
+        XCTAssertEqual(newSubviewCount, subviewCount + 2)
+    }
+
+    func testCustomizeWithBlurLight() {
+        let subviewCount = swiftNotifications.subviews.count
+        swiftNotifications.customize(style: .blurLight)
+        let newSubviewCount = swiftNotifications.subviews.count
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.clear)
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.black)
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.black)
+        XCTAssertEqual(newSubviewCount, subviewCount + 2)
+    }
+
+    func testCustomizeWithCustom() {
+        let subviewCount = swiftNotifications.subviews.count
+        swiftNotifications.customize(style: .blurLight)
+        swiftNotifications.customize(style: .custom)
+        let newSubviewCount = swiftNotifications.subviews.count
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.white)
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.black)
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.black)
+        XCTAssertEqual(newSubviewCount, subviewCount)
+    }
+
+    func testCustomizeWithError() {
+        swiftNotifications.customize(style: .error)
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.snRedColor())
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.snWhiteColor())
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snWhiteColor())
+    }
+
 }
