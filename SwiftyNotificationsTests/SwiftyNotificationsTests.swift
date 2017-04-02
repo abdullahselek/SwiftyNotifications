@@ -129,4 +129,32 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snWhiteColor())
     }
 
+    func testCustomizerWithSucess() {
+        swiftNotifications.customize(style: .success)
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.snGreenColor())
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.snWhiteColor())
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snWhiteColor())
+    }
+
+    func testCustomizerWithInfo() {
+        swiftNotifications.customize(style: .info)
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.snOrangeColor())
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.snWhiteColor())
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snWhiteColor())
+    }
+
+    func testCustomizerWithWarning() {
+        swiftNotifications.customize(style: .warning)
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.snYellowColor())
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.snBlackColor())
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snBlackColor())
+    }
+
+    func testCustomizerWithNormal() {
+        swiftNotifications.customize(style: .normal)
+        XCTAssertEqual(swiftNotifications.backgroundColor, UIColor.snBlueColor())
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.snWhiteColor())
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snWhiteColor())
+    }
+
 }
