@@ -280,4 +280,8 @@ public class SwiftyNotifications: UIView {
         }
     }
 
+    internal func canDisplay() -> Bool {
+        return self.superview != nil ? true : false
+    }
+
 }

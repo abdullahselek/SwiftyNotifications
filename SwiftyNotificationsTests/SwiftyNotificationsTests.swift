@@ -179,4 +179,15 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.snWhiteColor())
     }
 
+    func testCanDisplay_whenItHasSuperView() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftNotifications)
+        let _ = viewController.view
+        XCTAssertTrue(swiftNotifications.canDisplay())
+    }
+
+    func testCanDisplay_whenItHasNoSuperView() {
+        XCTAssertFalse(swiftNotifications.canDisplay())
+    }
+
 }
