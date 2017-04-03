@@ -1,0 +1,22 @@
+{
+  "name": "SwiftyNotifications",
+  "version": "1.0",
+  "summary": "Highly configurable iOS UIView for presenting notifications that does not block the UI.",
+  "homepage": "https://github.com/abdullahselek/SwiftyNotifications",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Abdullah Selek": "abdullahselek@yahoo.com"
+  },
+  "source": {
+    "git": "https://github.com/abdullahselek/SwiftyNotifications.git",
+    "tag": "1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "SwiftyNotifications/*.swift",
+  "requires_arc": true
+}
