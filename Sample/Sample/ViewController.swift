@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let notification = SwiftyNotifications.withStyle(style: .info, title: "Information Title", subtitle: "Information description can be anything to give a description")
+        let notification = SwiftyNotifications.withStyle(style: .info,
+                                                         title: "Information Title",
+                                                         subtitle: "Information description can be anything to give a description")
         view.addSubview(notification)
     }
 
