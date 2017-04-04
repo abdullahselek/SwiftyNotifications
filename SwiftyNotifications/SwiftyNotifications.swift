@@ -61,7 +61,7 @@ public class SwiftyNotifications: UIView {
 
     private var style: SwiftyNotificationsStyle!
     private var fromTop: Bool!
-    private var delegate: SwiftyNotificationsDelegate!
+    private var delegate: SwiftyNotificationsDelegate?
     private var dismissDelay: TimeInterval?
     private var touchHandler: SwiftyNotificationsTouchHandler?
 
