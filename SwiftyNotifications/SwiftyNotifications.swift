@@ -120,6 +120,24 @@ public class SwiftyNotifications: UIView {
         return notification
     }
 
+    public func show() {
+        if canDisplay() {
+            self.delegate?.willShowNotification?(notification: self)
+            UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: { 
+                self.superview?.layoutIfNeeded()
+            }, completion: { (finished) in
+                if self.dismissDelay != nil && self.dismissDelay! > 0 {
+                    // add timer
+                }
+                self.delegate?.didShowNotification?(notification: self)
+            })
+        } else {
+            NSException(name: NSExceptionName.internalInconsistencyException,
+                        reason: "Must have a superview before calling show",
+                        userInfo: nil).raise()
+        }
+    }
+
     internal func addBlurView(blurStyle: UIBlurEffectStyle) {
         let blurEffect = UIBlurEffect(style: blurStyle)
         blurView = UIVisualEffectView(effect: blurEffect)
