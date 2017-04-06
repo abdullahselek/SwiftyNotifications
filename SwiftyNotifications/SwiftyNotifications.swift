@@ -144,7 +144,16 @@ public class SwiftyNotifications: UIView {
     }
 
     internal func dismiss() {
-
+        self.delegate?.willDismissNotification?(notification: self)
+        if self.dismissTimer != nil {
+            self.dismissTimer!.invalidate()
+            self.dismissTimer = nil
+        }
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
+            self.superview?.layoutIfNeeded()
+        }, completion: { (finished) in
+            self.delegate?.didDismissNotification?(notification: self)
+        })
     }
 
     internal func addBlurView(blurStyle: UIBlurEffectStyle) {
