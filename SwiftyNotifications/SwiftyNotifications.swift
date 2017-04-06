@@ -63,6 +63,7 @@ public class SwiftyNotifications: UIView {
     private var fromTop: Bool!
     private var delegate: SwiftyNotificationsDelegate?
     private var dismissDelay: TimeInterval?
+    private var dismissTimer: Timer?
     private var touchHandler: SwiftyNotificationsTouchHandler?
 
     class func instanceFromNib() -> SwiftyNotifications {
@@ -127,7 +128,11 @@ public class SwiftyNotifications: UIView {
                 self.superview?.layoutIfNeeded()
             }, completion: { (finished) in
                 if self.dismissDelay != nil && self.dismissDelay! > 0 {
-                    // add timer
+                    self.dismissTimer = Timer.scheduledTimer(timeInterval: self.dismissDelay!,
+                                                             target: self,
+                                                             selector: #selector(SwiftyNotifications.dismiss),
+                                                             userInfo: nil,
+                                                             repeats: false)
                 }
                 self.delegate?.didShowNotification?(notification: self)
             })
@@ -136,6 +141,10 @@ public class SwiftyNotifications: UIView {
                         reason: "Must have a superview before calling show",
                         userInfo: nil).raise()
         }
+    }
+
+    internal func dismiss() {
+
     }
 
     internal func addBlurView(blurStyle: UIBlurEffectStyle) {
