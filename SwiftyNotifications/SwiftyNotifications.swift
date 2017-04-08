@@ -108,6 +108,7 @@ public class SwiftyNotifications: UIView {
                                  dismissDelay: TimeInterval,
                                  touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
         let notification = SwiftyNotifications.instanceFromNib()
+        notification.leftAccessoryView.makeRound()
         if dismissDelay > 0 {
             notification.dismissDelay = dismissDelay
         }
