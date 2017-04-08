@@ -163,6 +163,63 @@ public class SwiftyNotifications: UIView {
         })
     }
 
+    public func customize(style: SwiftyNotificationsStyle) {
+        removeBlurViews()
+        switch style {
+        case .blurDark:
+            let primaryColor = UIColor.clear
+            let secondaryColor = UIColor.white
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+            addBlurView(blurStyle: .dark)
+        case .blurLight:
+            let primaryColor = UIColor.clear
+            let secondaryColor = UIColor.black
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+            addBlurView(blurStyle: .light)
+        case .custom:
+            let primaryColor = UIColor.white
+            let secondaryColor = UIColor.black
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .error:
+            let primaryColor = UIColor.snRedColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .success:
+            let primaryColor = UIColor.snGreenColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .info:
+            let primaryColor = UIColor.snOrangeColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .warning:
+            let primaryColor = UIColor.snYellowColor()
+            let secondaryColor = UIColor.snBlackColor()
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        case .normal:
+            let primaryColor = UIColor.snBlueColor()
+            let secondaryColor = UIColor.snWhiteColor()
+            self.contentView.backgroundColor = primaryColor
+            self.titleLabel.textColor = secondaryColor
+            self.subtitleLabel.textColor = secondaryColor
+        }
+        setAccessoryView(style: style)
+    }
+
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
@@ -251,63 +308,6 @@ public class SwiftyNotifications: UIView {
             subtitleLabel.isHidden = false
         }
         subtitleLabel.text = subtitleText
-    }
-
-    internal func customize(style: SwiftyNotificationsStyle) {
-        removeBlurViews()
-        switch style {
-        case .blurDark:
-            let primaryColor = UIColor.clear
-            let secondaryColor = UIColor.white
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-            addBlurView(blurStyle: .dark)
-        case .blurLight:
-            let primaryColor = UIColor.clear
-            let secondaryColor = UIColor.black
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-            addBlurView(blurStyle: .light)
-        case .custom:
-            let primaryColor = UIColor.white
-            let secondaryColor = UIColor.black
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-        case .error:
-            let primaryColor = UIColor.snRedColor()
-            let secondaryColor = UIColor.snWhiteColor()
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-        case .success:
-            let primaryColor = UIColor.snGreenColor()
-            let secondaryColor = UIColor.snWhiteColor()
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-        case .info:
-            let primaryColor = UIColor.snOrangeColor()
-            let secondaryColor = UIColor.snWhiteColor()
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-        case .warning:
-            let primaryColor = UIColor.snYellowColor()
-            let secondaryColor = UIColor.snBlackColor()
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-        case .normal:
-            let primaryColor = UIColor.snBlueColor()
-            let secondaryColor = UIColor.snWhiteColor()
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-        }
-        setAccessoryView(style: style)
     }
 
     internal func setAccessoryView(style: SwiftyNotificationsStyle) {
