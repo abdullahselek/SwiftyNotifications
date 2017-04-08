@@ -65,6 +65,7 @@ public class SwiftyNotifications: UIView {
     private var dismissDelay: TimeInterval?
     private var dismissTimer: Timer?
     private var touchHandler: SwiftyNotificationsTouchHandler?
+    private var topConstraint: NSLayoutConstraint!
 
     internal static let notificationHeight = CGFloat(85.0)
 
@@ -128,6 +129,7 @@ public class SwiftyNotifications: UIView {
     public func show() {
         if canDisplay() {
             self.delegate?.willShowNotification?(notification: self)
+            updateTopConstraint(hide: false)
             UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: { 
                 self.superview?.layoutIfNeeded()
             }, completion: { (finished) in
@@ -147,6 +149,20 @@ public class SwiftyNotifications: UIView {
         }
     }
 
+    public func dismiss() {
+        self.delegate?.willDismissNotification?(notification: self)
+        if self.dismissTimer != nil {
+            self.dismissTimer!.invalidate()
+            self.dismissTimer = nil
+        }
+        updateTopConstraint(hide: true)
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
+            self.superview?.layoutIfNeeded()
+        }, completion: { (finished) in
+            self.delegate?.didDismissNotification?(notification: self)
+        })
+    }
+
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
@@ -156,28 +172,19 @@ public class SwiftyNotifications: UIView {
     }
 
     internal func updateTopConstraint(hide: Bool) {
-        let constant = hide == true ? -SwiftyNotifications.notificationHeight : SwiftyNotifications.notificationHeight
-        let topConstraint = NSLayoutConstraint(item: self,
+        let constant = hide == true ? -SwiftyNotifications.notificationHeight : 0
+        if topConstraint != nil && (superview?.constraints.contains(topConstraint))! {
+            topConstraint.constant = constant
+        } else {
+            topConstraint = NSLayoutConstraint(item: self,
                                                attribute: .top,
                                                relatedBy: .equal,
                                                toItem: superview,
                                                attribute: .top,
                                                multiplier: 1.0,
                                                constant: constant)
-        superview?.addConstraint(topConstraint)
-    }
-
-    internal func dismiss() {
-        self.delegate?.willDismissNotification?(notification: self)
-        if self.dismissTimer != nil {
-            self.dismissTimer!.invalidate()
-            self.dismissTimer = nil
+            superview?.addConstraint(topConstraint)
         }
-        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
-            self.superview?.layoutIfNeeded()
-        }, completion: { (finished) in
-            self.delegate?.didDismissNotification?(notification: self)
-        })
     }
 
     internal func addBlurView(blurStyle: UIBlurEffectStyle) {

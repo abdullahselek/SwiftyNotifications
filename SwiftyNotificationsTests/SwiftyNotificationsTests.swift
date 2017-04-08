@@ -197,13 +197,10 @@ class SwiftyNotificationsTests: XCTestCase {
         let constraintCount = viewController.view.constraints.count
         XCTAssertEqual(constraintCount, 1)
         swiftNotifications.updateTopConstraint(hide: true)
-        let newConstraintCount = viewController.view.constraints.count
-        print(viewController.view.constraints)
-        XCTAssertEqual(newConstraintCount, 2)
-        let secondConstraint = viewController.view.constraints[1]
-        XCTAssertEqual(secondConstraint.firstAttribute, .top)
-        XCTAssertEqual(secondConstraint.firstItem as? SwiftyNotifications, swiftNotifications)
-        XCTAssertEqual(secondConstraint.constant, -SwiftyNotifications.notificationHeight)
+        let constraint = viewController.view.constraints[0]
+        XCTAssertEqual(constraint.firstAttribute, .top)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
+        XCTAssertEqual(constraint.constant, -SwiftyNotifications.notificationHeight)
     }
 
     func testUpdateTopConstraintforDisplaying() {
@@ -213,13 +210,10 @@ class SwiftyNotificationsTests: XCTestCase {
         let constraintCount = viewController.view.constraints.count
         XCTAssertEqual(constraintCount, 1)
         swiftNotifications.updateTopConstraint(hide: false)
-        let newConstraintCount = viewController.view.constraints.count
-        print(viewController.view.constraints)
-        XCTAssertEqual(newConstraintCount, 2)
-        let secondConstraint = viewController.view.constraints[1]
-        XCTAssertEqual(secondConstraint.firstAttribute, .top)
-        XCTAssertEqual(secondConstraint.firstItem as? SwiftyNotifications, swiftNotifications)
-        XCTAssertEqual(secondConstraint.constant, SwiftyNotifications.notificationHeight)
+        let constraint = viewController.view.constraints[0]
+        XCTAssertEqual(constraint.firstAttribute, .top)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
+        XCTAssertEqual(constraint.constant, 0)
     }
 
 }
