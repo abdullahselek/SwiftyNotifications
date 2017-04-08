@@ -66,6 +66,8 @@ public class SwiftyNotifications: UIView {
     private var dismissTimer: Timer?
     private var touchHandler: SwiftyNotificationsTouchHandler?
 
+    private static let notificationHeight = CGFloat(85.0)
+
     class func instanceFromNib() -> SwiftyNotifications {
         let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
         let bundle = Bundle(identifier: bundleIdentifier)
@@ -109,6 +111,7 @@ public class SwiftyNotifications: UIView {
                                  touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
         let notification = SwiftyNotifications.instanceFromNib()
         notification.leftAccessoryView.makeRound()
+        notification.translatesAutoresizingMaskIntoConstraints = false
         if dismissDelay > 0 {
             notification.dismissDelay = dismissDelay
         }
@@ -142,6 +145,21 @@ public class SwiftyNotifications: UIView {
                         reason: "Must have a superview before calling show",
                         userInfo: nil).raise()
         }
+    }
+
+    public override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        if superview == nil {
+            return
+        }
+        let topConstraint = NSLayoutConstraint(item: self,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: superview,
+                                               attribute: .top,
+                                               multiplier: 1.0,
+                                               constant: -SwiftyNotifications.notificationHeight)
+        superview?.addConstraint(topConstraint)
     }
 
     internal func dismiss() {
