@@ -48,10 +48,10 @@ public typealias SwiftyNotificationsTouchHandler = () -> Void
 
 public class SwiftyNotifications: UIView {
 
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var leftAccessoryView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet public weak var contentView: UIView!
+    @IBOutlet public weak var leftAccessoryView: UIImageView!
+    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet public weak var subtitleLabel: UILabel!
 
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var subtitleLabelBottomConstraint: NSLayoutConstraint!
@@ -220,6 +220,29 @@ public class SwiftyNotifications: UIView {
         setAccessoryView(style: style)
     }
 
+    public func setTitle(title: String, subtitle: String?) {
+        if !title.isEmpty {
+            titleLabel.text = title
+        }
+        guard let subtitleText = subtitle else {
+            subtitleLabel.isHidden = true
+            titleLabelTopConstraint.constant += 22
+            return
+        }
+        if titleLabelTopConstraint.constant == 32 {
+            titleLabelTopConstraint.constant = 10
+            subtitleLabel.isHidden = false
+        }
+        subtitleLabel.text = subtitleText
+    }
+
+    public func setCustomColors(backgroundColor: UIColor, textColor: UIColor) {
+        contentView.backgroundColor = backgroundColor
+        leftAccessoryView.backgroundColor = backgroundColor
+        titleLabel.textColor = textColor
+        subtitleLabel.textColor = textColor
+    }
+
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
@@ -294,26 +317,10 @@ public class SwiftyNotifications: UIView {
         }
     }
 
-    internal func setTitle(title: String, subtitle: String?) {
-        if !title.isEmpty {
-            titleLabel.text = title
-        }
-        guard let subtitleText = subtitle else {
-            subtitleLabel.isHidden = true
-            titleLabelTopConstraint.constant += 22
-            return
-        }
-        if titleLabelTopConstraint.constant == 32 {
-            titleLabelTopConstraint.constant = 10
-            subtitleLabel.isHidden = false
-        }
-        subtitleLabel.text = subtitleText
-    }
-
     internal func setAccessoryView(style: SwiftyNotificationsStyle) {
         var accessoryImage: UIImage!
         switch style {
-        case .blurDark, .blurLight, .custom:
+        case .blurDark, .blurLight:
             leftAccessoryView.isHidden = true
             break
         case .error:
@@ -336,6 +343,8 @@ public class SwiftyNotifications: UIView {
         case .normal:
             accessoryImage = SwiftyNotificationsDrawings.infoImage(color: UIColor.snBlueColor())
             leftAccessoryView.backgroundColor = UIColor.snWhiteColor()
+            break
+        default:
             break
         }
         leftAccessoryView.image = accessoryImage

@@ -216,4 +216,12 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(constraint.constant, 0)
     }
 
+    func testSetCustomColors() {
+        swiftNotifications.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
+        XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.cyan)
+        XCTAssertEqual(swiftNotifications.leftAccessoryView.backgroundColor, UIColor.cyan)
+        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.white)
+        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.white)
+    }
+
 }
