@@ -7,7 +7,7 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE=SwiftyNotifications.xcworkspace
   - FRAMEWORK_SCHEME="SwiftyNotifications"
-  - SDK=iphonesimulator10.0
+  - SDK=iphonesimulator10.3
   matrix:
     - DESTINATION="OS=10.3,name=iPhone SE"     SCHEME="$FRAMEWORK_SCHEME"     SDK="$SDK"     RUN_TESTS="YES" POD_LINT="NO"
     - DESTINATION="OS=9.0,name=iPhone 6"       SCHEME="$FRAMEWORK_SCHEME"     SDK="$SDK"     RUN_TESTS="YES" POD_LINT="NO"
