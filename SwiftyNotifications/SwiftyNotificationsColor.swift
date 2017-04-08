@@ -28,8 +28,8 @@ extension UIColor {
 
     static func hsbColor(hue: CGFloat, saturation: CGFloat, brightness: CGFloat) -> UIColor {
         return UIColor(hue: hue / 360.0,
-                       saturation: saturation / 360.0,
-                       brightness: brightness / 360.0,
+                       saturation: saturation / 100.0,
+                       brightness: brightness / 100.0,
                        alpha: 1.0)
     }
 
