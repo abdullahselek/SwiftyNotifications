@@ -31,8 +31,6 @@ public enum SwiftyNotificationsStyle {
     case info
     case warning
     case custom
-    case blurDark
-    case blurLight
 }
 
 @objc public protocol SwiftyNotificationsDelegate: class {
@@ -166,20 +164,20 @@ public class SwiftyNotifications: UIView {
     public func customize(style: SwiftyNotificationsStyle) {
         removeBlurViews()
         switch style {
-        case .blurDark:
-            let primaryColor = UIColor.clear
-            let secondaryColor = UIColor.white
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-            addBlurView(blurStyle: .dark)
-        case .blurLight:
-            let primaryColor = UIColor.clear
-            let secondaryColor = UIColor.black
-            self.contentView.backgroundColor = primaryColor
-            self.titleLabel.textColor = secondaryColor
-            self.subtitleLabel.textColor = secondaryColor
-            addBlurView(blurStyle: .light)
+//        case .blurDark:
+//            let primaryColor = UIColor.clear
+//            let secondaryColor = UIColor.white
+//            self.contentView.backgroundColor = primaryColor
+//            self.titleLabel.textColor = secondaryColor
+//            self.subtitleLabel.textColor = secondaryColor
+//            addBlurView(blurStyle: .dark)
+//        case .blurLight:
+//            let primaryColor = UIColor.clear
+//            let secondaryColor = UIColor.black
+//            self.contentView.backgroundColor = primaryColor
+//            self.titleLabel.textColor = secondaryColor
+//            self.subtitleLabel.textColor = secondaryColor
+//            addBlurView(blurStyle: .light)
         case .custom:
             let primaryColor = UIColor.white
             let secondaryColor = UIColor.black
@@ -320,9 +318,6 @@ public class SwiftyNotifications: UIView {
     internal func setAccessoryView(style: SwiftyNotificationsStyle) {
         var accessoryImage: UIImage!
         switch style {
-        case .blurDark, .blurLight:
-            leftAccessoryView.isHidden = true
-            break
         case .error:
             accessoryImage = SwiftyNotificationsDrawings.crossImage(color: UIColor.snRedColor())
             leftAccessoryView.backgroundColor = UIColor.snWhiteColor()
@@ -347,7 +342,10 @@ public class SwiftyNotifications: UIView {
         default:
             break
         }
-        leftAccessoryView.image = accessoryImage
+        if accessoryImage != nil {
+            let image = accessoryImage.scaleImageToFitSize(size: CGSize(width: 45.0, height: 45.0))
+            leftAccessoryView.image = image
+        }
     }
 
     internal func handleTap() {

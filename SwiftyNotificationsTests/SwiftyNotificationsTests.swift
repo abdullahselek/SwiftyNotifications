@@ -113,29 +113,28 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
     }
 
-    func testCustomizeWithBlurDark() {
-        let subviewCount = swiftNotifications.subviews.count
-        swiftNotifications.customize(style: .blurDark)
-        let newSubviewCount = swiftNotifications.subviews.count
-        XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.clear)
-        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.white)
-        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.white)
-        XCTAssertEqual(newSubviewCount, subviewCount + 2)
-    }
-
-    func testCustomizeWithBlurLight() {
-        let subviewCount = swiftNotifications.subviews.count
-        swiftNotifications.customize(style: .blurLight)
-        let newSubviewCount = swiftNotifications.subviews.count
-        XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.clear)
-        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.black)
-        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.black)
-        XCTAssertEqual(newSubviewCount, subviewCount + 2)
-    }
+//    func testCustomizeWithBlurDark() {
+//        let subviewCount = swiftNotifications.subviews.count
+//        swiftNotifications.customize(style: .blurDark)
+//        let newSubviewCount = swiftNotifications.subviews.count
+//        XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.clear)
+//        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.white)
+//        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.white)
+//        XCTAssertEqual(newSubviewCount, subviewCount + 2)
+//    }
+//
+//    func testCustomizeWithBlurLight() {
+//        let subviewCount = swiftNotifications.subviews.count
+//        swiftNotifications.customize(style: .blurLight)
+//        let newSubviewCount = swiftNotifications.subviews.count
+//        XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.clear)
+//        XCTAssertEqual(swiftNotifications.titleLabel.textColor, UIColor.black)
+//        XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.black)
+//        XCTAssertEqual(newSubviewCount, subviewCount + 2)
+//    }
 
     func testCustomizeWithCustom() {
         let subviewCount = swiftNotifications.subviews.count
-        swiftNotifications.customize(style: .blurLight)
         swiftNotifications.customize(style: .custom)
         let newSubviewCount = swiftNotifications.subviews.count
         XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.white)

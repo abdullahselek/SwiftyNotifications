@@ -152,3 +152,26 @@ class SwiftyNotificationsDrawings {
     }
 
 }
+
+extension UIImage {
+
+    func scaleImageToSize(size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return self
+        }
+        UIGraphicsEndImageContext()
+        return image
+    }
+
+    func scaleImageToFitSize(size: CGSize) -> UIImage {
+        let aspect = self.size.width / self.size.height
+        if size.width / aspect <= size.height {
+            return scaleImageToSize(size: CGSize(width: size.width, height: size.width / aspect))
+        } else {
+            return scaleImageToSize(size: CGSize(width: size.height * aspect, height: size.height))
+        }
+    }
+
+}
