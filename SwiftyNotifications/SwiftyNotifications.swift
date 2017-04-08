@@ -66,7 +66,7 @@ public class SwiftyNotifications: UIView {
     private var dismissTimer: Timer?
     private var touchHandler: SwiftyNotificationsTouchHandler?
 
-    private static let notificationHeight = CGFloat(85.0)
+    internal static let notificationHeight = CGFloat(85.0)
 
     class func instanceFromNib() -> SwiftyNotifications {
         let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
@@ -152,13 +152,18 @@ public class SwiftyNotifications: UIView {
         if superview == nil {
             return
         }
+        updateTopConstraint(hide: true)
+    }
+
+    internal func updateTopConstraint(hide: Bool) {
+        let constant = hide == true ? -SwiftyNotifications.notificationHeight : SwiftyNotifications.notificationHeight
         let topConstraint = NSLayoutConstraint(item: self,
                                                attribute: .top,
                                                relatedBy: .equal,
                                                toItem: superview,
                                                attribute: .top,
                                                multiplier: 1.0,
-                                               constant: -SwiftyNotifications.notificationHeight)
+                                               constant: constant)
         superview?.addConstraint(topConstraint)
     }
 

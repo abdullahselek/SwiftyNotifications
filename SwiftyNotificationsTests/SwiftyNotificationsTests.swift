@@ -190,4 +190,36 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertFalse(swiftNotifications.canDisplay())
     }
 
+    func testUpdateTopConstraintforHiding() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftNotifications)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftNotifications.updateTopConstraint(hide: true)
+        let newConstraintCount = viewController.view.constraints.count
+        print(viewController.view.constraints)
+        XCTAssertEqual(newConstraintCount, 2)
+        let secondConstraint = viewController.view.constraints[1]
+        XCTAssertEqual(secondConstraint.firstAttribute, .top)
+        XCTAssertEqual(secondConstraint.firstItem as? SwiftyNotifications, swiftNotifications)
+        XCTAssertEqual(secondConstraint.constant, -SwiftyNotifications.notificationHeight)
+    }
+
+    func testUpdateTopConstraintforDisplaying() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftNotifications)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftNotifications.updateTopConstraint(hide: false)
+        let newConstraintCount = viewController.view.constraints.count
+        print(viewController.view.constraints)
+        XCTAssertEqual(newConstraintCount, 2)
+        let secondConstraint = viewController.view.constraints[1]
+        XCTAssertEqual(secondConstraint.firstAttribute, .top)
+        XCTAssertEqual(secondConstraint.firstItem as? SwiftyNotifications, swiftNotifications)
+        XCTAssertEqual(secondConstraint.constant, SwiftyNotifications.notificationHeight)
+    }
+
 }
