@@ -162,22 +162,7 @@ public class SwiftyNotifications: UIView {
     }
 
     public func customize(style: SwiftyNotificationsStyle) {
-        removeBlurViews()
         switch style {
-//        case .blurDark:
-//            let primaryColor = UIColor.clear
-//            let secondaryColor = UIColor.white
-//            self.contentView.backgroundColor = primaryColor
-//            self.titleLabel.textColor = secondaryColor
-//            self.subtitleLabel.textColor = secondaryColor
-//            addBlurView(blurStyle: .dark)
-//        case .blurLight:
-//            let primaryColor = UIColor.clear
-//            let secondaryColor = UIColor.black
-//            self.contentView.backgroundColor = primaryColor
-//            self.titleLabel.textColor = secondaryColor
-//            self.subtitleLabel.textColor = secondaryColor
-//            addBlurView(blurStyle: .light)
         case .custom:
             let primaryColor = UIColor.white
             let secondaryColor = UIColor.black
