@@ -157,11 +157,11 @@ extension UIImage {
 
     func scaleImageToSize(size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
         draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
             return self
         }
-        UIGraphicsEndImageContext()
         return image
     }
 
