@@ -1,3 +1,9 @@
+![Build Status](https://travis-ci.org/abdullahselek/SwiftyNotifications.svg?branch=master)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftyNotifications.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Platform](https://img.shields.io/cocoapods/p/SwiftyNotifications.svg?style=flat)
+![License](https://img.shields.io/dub/l/vibe-d.svg)
+
 # SwiftyNotifications
 
 Highly configurable iOS UIView for presenting notifications that doesn't block the UI.
