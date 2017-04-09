@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CE99A387761DBA903C7DD9AD80A14BF /* SwiftyNotifications-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF4678E3CDF0B664D102F5827B3D897 /* SwiftyNotifications-dummy.m */; };
+		2CE99A387761DBA903C7DD9AD80A14BF /* SwiftyNotifications-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A06061A9B5870ADFB66C73C5CAC38AA /* SwiftyNotifications-dummy.m */; };
 		797E8C3B7C8E61134EEDDD975866269C /* Pods-Sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 630DD76D417453483F37DBAE838D5518 /* Pods-Sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F3F61C974B59AD422217A4AC3AC2D8D /* SwiftyNotificationsDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE86090C2260B9E1B022BB787DEA396 /* SwiftyNotificationsDrawings.swift */; };
-		857A89CB25181DE65D551956A0432124 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5ADF6C50CBB3153D1FC7E9FAC81B61 /* RoundedView.swift */; };
+		7F3F61C974B59AD422217A4AC3AC2D8D /* SwiftyNotificationsDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3DA67C5CBD7858BF08A3F415B2F83E /* SwiftyNotificationsDrawings.swift */; };
+		857A89CB25181DE65D551956A0432124 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F05C45A84B4BD6E12D4420F00A4E0A3 /* RoundedView.swift */; };
 		968DC704B305E7DE4350FA7E92A916E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		A3F2AD2249D5B392D83D2A01589B68EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		B0ED689F70FBB891121C5540EA1474E4 /* SwiftyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776C2458376FE0333C2A28E45B3F7D /* SwiftyNotifications.swift */; };
-		C87951ECAF12E7B2432C10508867A069 /* SwiftyNotifications-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B434908596440613A50A72C56A2AD61 /* SwiftyNotifications-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D52BA481455528F0B69CD6366EE79313 /* SwiftyNotificationsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69670AFCFEB29E3E3041CE5A010EAD28 /* SwiftyNotificationsColor.swift */; };
+		B0ED689F70FBB891121C5540EA1474E4 /* SwiftyNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185115FD416DD057E11F022FC57A987A /* SwiftyNotifications.swift */; };
+		C87951ECAF12E7B2432C10508867A069 /* SwiftyNotifications-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C7A596FF44FFAF23B31DCED93603602 /* SwiftyNotifications-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D52BA481455528F0B69CD6366EE79313 /* SwiftyNotificationsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B9C3689BAD6001D37E5B716D11650 /* SwiftyNotificationsColor.swift */; };
 		D8DF1BF545B644A2AFC823C53D02A994 /* Pods-Sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF50723EE695E440CDA214119EF2C70 /* Pods-Sample-dummy.m */; };
+		E76592CABEBCC3C0CA2E87DA47A7BD70 /* SwiftyNotifications.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4EBA4D2B212A09C69CB43AAB9A0A29B /* SwiftyNotifications.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,30 +31,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BA7DA8C9750F9E9C168925602D8CE75 /* SwiftyNotifications-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyNotifications-prefix.pch"; sourceTree = "<group>"; };
+		0C3DA67C5CBD7858BF08A3F415B2F83E /* SwiftyNotificationsDrawings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsDrawings.swift; sourceTree = "<group>"; };
 		161FD1626938094EEC6BF57530EDB6DA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C8661269144D7D0283D51D4BC36D99A /* SwiftyNotifications.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyNotifications.modulemap; sourceTree = "<group>"; };
+		185115FD416DD057E11F022FC57A987A /* SwiftyNotifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyNotifications.swift; sourceTree = "<group>"; };
+		1A06061A9B5870ADFB66C73C5CAC38AA /* SwiftyNotifications-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyNotifications-dummy.m"; sourceTree = "<group>"; };
 		2FDF78216A41DB691C5960FEE69EB9FD /* Pods-Sample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sample-resources.sh"; sourceTree = "<group>"; };
 		3330977EBE93059CFB2AFBEAC91BC456 /* SwiftyNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyNotifications.framework; path = SwiftyNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE375A74D27FC41E7BB6C006DFC76A6 /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		3C7A596FF44FFAF23B31DCED93603602 /* SwiftyNotifications-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyNotifications-umbrella.h"; sourceTree = "<group>"; };
+		4A71F2DE3A71533C8D7A48202861D22F /* SwiftyNotifications-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyNotifications-prefix.pch"; sourceTree = "<group>"; };
 		4AF50723EE695E440CDA214119EF2C70 /* Pods-Sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sample-dummy.m"; sourceTree = "<group>"; };
-		4B434908596440613A50A72C56A2AD61 /* SwiftyNotifications-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyNotifications-umbrella.h"; sourceTree = "<group>"; };
+		4BDD75FAD1A49838B8B6B8A0DD874C84 /* SwiftyNotifications.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyNotifications.modulemap; sourceTree = "<group>"; };
+		4F05C45A84B4BD6E12D4420F00A4E0A3 /* RoundedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		630DD76D417453483F37DBAE838D5518 /* Pods-Sample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sample-umbrella.h"; sourceTree = "<group>"; };
-		69670AFCFEB29E3E3041CE5A010EAD28 /* SwiftyNotificationsColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsColor.swift; sourceTree = "<group>"; };
-		6C2FA4E470A66EE84BCEE9F4D214AAFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D65DC53E876D33B73CCFEE44C379EE1 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
-		6DF4678E3CDF0B664D102F5827B3D897 /* SwiftyNotifications-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyNotifications-dummy.m"; sourceTree = "<group>"; };
 		735E5204C40E887244F2B75BCCDF2572 /* Pods-Sample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Sample.modulemap"; sourceTree = "<group>"; };
 		770397EAA194408F200B966AE85C264F /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sample.framework; path = "Pods-Sample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A5ADF6C50CBB3153D1FC7E9FAC81B61 /* RoundedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94276BA7AA17E26722ACAA5CB9DAE247 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C896AB03AD02637A2108FF27D207683 /* Pods-Sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sample-frameworks.sh"; sourceTree = "<group>"; };
-		9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyNotifications.xcconfig; sourceTree = "<group>"; };
 		A21D9B3C2775E7C503E601A5737980FB /* Pods-Sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A4EBA4D2B212A09C69CB43AAB9A0A29B /* SwiftyNotifications.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SwiftyNotifications.xib; sourceTree = "<group>"; };
 		A4F67C9E66E8D9E97F11042B162517EB /* Pods-Sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sample-acknowledgements.plist"; sourceTree = "<group>"; };
-		A9776C2458376FE0333C2A28E45B3F7D /* SwiftyNotifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyNotifications.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CEE86090C2260B9E1B022BB787DEA396 /* SwiftyNotificationsDrawings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsDrawings.swift; sourceTree = "<group>"; };
+		CD5B9C3689BAD6001D37E5B716D11650 /* SwiftyNotificationsColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsColor.swift; sourceTree = "<group>"; };
+		DD2800E854DDEB2398BB1BA013A4363D /* SwiftyNotifications.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyNotifications.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,24 +78,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		122010152EB25038A0FF5793E3A04887 /* SwiftyNotifications */ = {
+		2634953653B894F63B75DEE75354DEFC /* SwiftyNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				7A5ADF6C50CBB3153D1FC7E9FAC81B61 /* RoundedView.swift */,
-				A9776C2458376FE0333C2A28E45B3F7D /* SwiftyNotifications.swift */,
-				69670AFCFEB29E3E3041CE5A010EAD28 /* SwiftyNotificationsColor.swift */,
-				CEE86090C2260B9E1B022BB787DEA396 /* SwiftyNotificationsDrawings.swift */,
+				4A46CE6034A5502AD402BF58C2617058 /* Resources */,
+				6A4588BEE1771C6836B20DD97F09333B /* Support Files */,
+				C6DDF3CEBCC1844F583A6EB3A5CACE63 /* SwiftyNotifications */,
 			);
 			name = SwiftyNotifications;
-			path = SwiftyNotifications;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		7046BE8B1E219EF893E144047303D756 /* Development Pods */ = {
+		4A46CE6034A5502AD402BF58C2617058 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A4134B07E81AE56E667E67616B99105C /* SwiftyNotifications */,
+				E117D88F8D3E70ACD9D3198BBFC05079 /* SwiftyNotifications */,
 			);
-			name = "Development Pods";
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6A4588BEE1771C6836B20DD97F09333B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				94276BA7AA17E26722ACAA5CB9DAE247 /* Info.plist */,
+				4BDD75FAD1A49838B8B6B8A0DD874C84 /* SwiftyNotifications.modulemap */,
+				DD2800E854DDEB2398BB1BA013A4363D /* SwiftyNotifications.xcconfig */,
+				1A06061A9B5870ADFB66C73C5CAC38AA /* SwiftyNotifications-dummy.m */,
+				4A71F2DE3A71533C8D7A48202861D22F /* SwiftyNotifications-prefix.pch */,
+				3C7A596FF44FFAF23B31DCED93603602 /* SwiftyNotifications-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/SwiftyNotifications";
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -108,35 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7046BE8B1E219EF893E144047303D756 /* Development Pods */,
+				AAB789E8678C2556AF4B8C05C47CC653 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				C220DB6CACD3F551E6CC2EED7BD69FA2 /* Products */,
 				A8614ADDDA2C845A05B4D5D16AB12C48 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		91BD6A19532F7EF7F57ACBA0A09A106E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6C2FA4E470A66EE84BCEE9F4D214AAFA /* Info.plist */,
-				1C8661269144D7D0283D51D4BC36D99A /* SwiftyNotifications.modulemap */,
-				9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */,
-				6DF4678E3CDF0B664D102F5827B3D897 /* SwiftyNotifications-dummy.m */,
-				0BA7DA8C9750F9E9C168925602D8CE75 /* SwiftyNotifications-prefix.pch */,
-				4B434908596440613A50A72C56A2AD61 /* SwiftyNotifications-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/SwiftyNotifications";
-			sourceTree = "<group>";
-		};
-		A4134B07E81AE56E667E67616B99105C /* SwiftyNotifications */ = {
-			isa = PBXGroup;
-			children = (
-				91BD6A19532F7EF7F57ACBA0A09A106E /* Support Files */,
-				122010152EB25038A0FF5793E3A04887 /* SwiftyNotifications */,
-			);
-			name = SwiftyNotifications;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		A8614ADDDA2C845A05B4D5D16AB12C48 /* Targets Support Files */ = {
@@ -145,6 +136,14 @@
 				BF5639CAB18577B4EDAE07E0E34E188C /* Pods-Sample */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AAB789E8678C2556AF4B8C05C47CC653 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2634953653B894F63B75DEE75354DEFC /* SwiftyNotifications */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -182,6 +181,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C6DDF3CEBCC1844F583A6EB3A5CACE63 /* SwiftyNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				4F05C45A84B4BD6E12D4420F00A4E0A3 /* RoundedView.swift */,
+				185115FD416DD057E11F022FC57A987A /* SwiftyNotifications.swift */,
+				CD5B9C3689BAD6001D37E5B716D11650 /* SwiftyNotificationsColor.swift */,
+				0C3DA67C5CBD7858BF08A3F415B2F83E /* SwiftyNotificationsDrawings.swift */,
+			);
+			name = SwiftyNotifications;
+			path = SwiftyNotifications;
+			sourceTree = "<group>";
+		};
+		E117D88F8D3E70ACD9D3198BBFC05079 /* SwiftyNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				A4EBA4D2B212A09C69CB43AAB9A0A29B /* SwiftyNotifications.xib */,
+			);
+			name = SwiftyNotifications;
+			path = SwiftyNotifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -210,6 +230,7 @@
 			buildPhases = (
 				23B3A6E5D8EAB4FD6B54D6077770D76E /* Sources */,
 				3B406A81CF84F3ACA43C0C14A1195109 /* Frameworks */,
+				486FBEABD5CFB6E55D27BD2F264E3B99 /* Resources */,
 				8C5DF6471CA0AE23292348112A0E8AF6 /* Headers */,
 			);
 			buildRules = (
@@ -266,6 +287,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		486FBEABD5CFB6E55D27BD2F264E3B99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76592CABEBCC3C0CA2E87DA47A7BD70 /* SwiftyNotifications.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		23B3A6E5D8EAB4FD6B54D6077770D76E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -301,7 +333,7 @@
 /* Begin XCBuildConfiguration section */
 		46A022A11FA94EB075AF780F87247852 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */;
+			baseConfigurationReference = DD2800E854DDEB2398BB1BA013A4363D /* SwiftyNotifications.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -488,7 +520,7 @@
 		};
 		F7257A264E874BEB1500FB4F5B9FA626 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */;
+			baseConfigurationReference = DD2800E854DDEB2398BB1BA013A4363D /* SwiftyNotifications.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
