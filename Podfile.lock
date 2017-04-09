@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  SwiftyNotifications: c3066491fe8f622b293d17722b469216dd131b2f
+  SwiftyNotifications: abbe98e6a834db44c898cfeceb73856c69ace245
 
 PODFILE CHECKSUM: 1be790d2b9e3e455db7dd5e206eaa26dbe5f19b0
 

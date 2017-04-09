@@ -299,6 +299,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		46A022A11FA94EB075AF780F87247852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyNotifications/SwiftyNotifications-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyNotifications/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyNotifications/SwiftyNotifications.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyNotifications;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		46B5E1657DFEC8BD0BA2CB0810292335 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D65DC53E876D33B73CCFEE44C379EE1 /* Pods-Sample.release.xcconfig */;
@@ -414,39 +446,6 @@
 			};
 			name = Debug;
 		};
-		A33E31A3B117BDC7D372B1826B08F474 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyNotifications/SwiftyNotifications-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyNotifications/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyNotifications/SwiftyNotifications.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwiftyNotifications;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -487,7 +486,7 @@
 			};
 			name = Release;
 		};
-		FA20CAA737F694E7773090EB6715AF15 /* Release */ = {
+		F7257A264E874BEB1500FB4F5B9FA626 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DDF9B73B36CF1D7799BAAA97293DA91 /* SwiftyNotifications.xcconfig */;
 			buildSettings = {
@@ -495,7 +494,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -505,19 +504,20 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftyNotifications/SwiftyNotifications-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftyNotifications/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftyNotifications/SwiftyNotifications.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SwiftyNotifications;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -534,8 +534,8 @@
 		A1F4B6748C209F327E57EE3767414E5A /* Build configuration list for PBXNativeTarget "SwiftyNotifications" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A33E31A3B117BDC7D372B1826B08F474 /* Debug */,
-				FA20CAA737F694E7773090EB6715AF15 /* Release */,
+				F7257A264E874BEB1500FB4F5B9FA626 /* Debug */,
+				46A022A11FA94EB075AF780F87247852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
