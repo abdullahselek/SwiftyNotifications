@@ -21,6 +21,13 @@ class ViewController: UIViewController {
                                                      title: "Information Title",
                                                      subtitle: "Information description can be anything to give a description")
         view.addSubview(notification)
+
+        customNotification = SwiftyNotifications.withStyle(style: .custom,
+                                                           title: "Custom",
+                                                           subtitle: "Custom notification with custom image and colors")
+        customNotification.leftAccessoryView.image = UIImage(named: "apple_logo")!
+        customNotification.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
+        view.addSubview(customNotification)
     }
 
     @IBAction func show(_ sender: Any) {
@@ -54,18 +61,8 @@ class ViewController: UIViewController {
             break
         case 5:
             notification.dismiss()
-            customNotification = SwiftyNotifications.withStyle(style: .custom, title: "Custom", subtitle: "Custom notification with custom image and colors")
-            customNotification.leftAccessoryView.image = UIImage(named: "apple_logo")!
-            customNotification.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
-            view.addSubview(customNotification)
             customNotification.show()
             break
-//        case 6:
-//            notification.customize(style: .blurDark)
-//            break
-//        case 7:
-//            notification.customize(style: .blurLight)
-//            break
         default:
             break
         }
