@@ -68,9 +68,8 @@ public class SwiftyNotifications: UIView {
     internal static let notificationHeight = CGFloat(85.0)
 
     class func instanceFromNib() -> SwiftyNotifications {
-        let bundleIdentifier = "com.abdullahselek.SwiftyNotifications"
-        let bundle = Bundle(identifier: bundleIdentifier)
-        return bundle?.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! SwiftyNotifications
+        let bundle = Bundle(for: self.classForCoder())
+        return bundle.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! SwiftyNotifications
     }
 
     internal override init(frame: CGRect) {
