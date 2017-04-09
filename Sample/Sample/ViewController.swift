@@ -18,8 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         notification = SwiftyNotifications.withStyle(style: .info,
-                                                     title: "Information Title",
-                                                     subtitle: "Information description can be anything to give a description")
+                                                     title: "Swifty Notifications",
+                                                     subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI")
         view.addSubview(notification)
 
         customNotification = SwiftyNotifications.withStyle(style: .custom,
