@@ -101,3 +101,21 @@ customNotification.leftAccessoryView.image = UIImage(named: "apple_logo")!
 customNotification.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
 view.addSubview(customNotification)
 ```
+
+Other available functions for creating notifications
+> With a time interval option for auto dismissing
+```
+let notification = SwiftyNotifications.withStyle(style: .warning,
+												 title: "Title",
+												 subtitle: "Subtitle",
+												 dismissDelay: 3.0)
+```
+> With touch handler
+```
+let notification = SwiftyNotifications.withStyle(style: .error,
+											     title: "Title",
+											     subtitle: "Subtitle",
+											     dismissDelay: 5.0) {
+
+        }
+```
