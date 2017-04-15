@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyNotifications
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SwiftyNotificationsDelegate {
 
     private var notification: SwiftyNotifications!
     private var customNotification: SwiftyNotifications!
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         notification = SwiftyNotifications.withStyle(style: .info,
                                                      title: "Swifty Notifications",
                                                      subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI")
+        notification.delegate = self
         view.addSubview(notification)
 
         customNotification = SwiftyNotifications.withStyle(style: .custom,
@@ -66,6 +67,24 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+
+    // MARK: SwiftyNotifications Delegates
+
+    func willShowNotification(notification: SwiftyNotifications) {
+
+    }
+
+    func didShowNotification(notification: SwiftyNotifications) {
+
+    }
+
+    func willDismissNotification(notification: SwiftyNotifications) {
+
+    }
+
+    func didDismissNotification(notification: SwiftyNotifications) {
+
     }
 
     override func didReceiveMemoryWarning() {

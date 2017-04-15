@@ -51,6 +51,8 @@ public class SwiftyNotifications: UIView {
     @IBOutlet public weak var titleLabel: UILabel!
     @IBOutlet public weak var subtitleLabel: UILabel!
 
+    public var delegate: SwiftyNotificationsDelegate?
+
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var subtitleLabelBottomConstraint: NSLayoutConstraint!
 
@@ -59,7 +61,6 @@ public class SwiftyNotifications: UIView {
 
     private var style: SwiftyNotificationsStyle!
     private var fromTop: Bool!
-    private var delegate: SwiftyNotificationsDelegate?
     private var dismissDelay: TimeInterval?
     private var dismissTimer: Timer?
     private var touchHandler: SwiftyNotificationsTouchHandler?
