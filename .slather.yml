@@ -1,6 +1,6 @@
 ci_service: travis_ci
 coverage_service: coveralls
-workspace: SwiftyNotifications.xcodeworkspace
+workspace: SwiftyNotifications.xcworkspace
 xcodeproj: SwiftyNotifications.xcodeproj
 scheme: SwiftyNotifications
 source_directory: SwiftyNotifications/
