@@ -33,7 +33,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-	pod 'SwiftyNotifications', '~>0.1'
+	pod 'SwiftyNotifications', '~>0.2'
 end
 ```
 
@@ -56,7 +56,7 @@ brew install carthage
 To integrate SwiftyNotifications into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
-github "abdullahselek/SwiftyNotifications" ~> 0.1
+github "abdullahselek/SwiftyNotifications" ~> 0.2
 ```
 
 ## Example Usage
@@ -117,5 +117,18 @@ let notification = SwiftyNotifications.withStyle(style: .error,
                                                  subtitle: "Subtitle",
                                                  dismissDelay: 5.0) {
                                                             
+        }
+```
+
+Optional delegates that gives informations about showing and dismissing notification screen
+- `func willShowNotification(notification: SwiftyNotifications)`
+- `func didShowNotification(notification: SwiftyNotifications)`
+- `func willDismissNotification(notification: SwiftyNotifications)`
+- `func didDismissNotification(notification: SwiftyNotifications)`
+
+Adding touch handler to catch tap gestures on notification
+```
+notification.addTouchHandler {
+
         }
 ```
