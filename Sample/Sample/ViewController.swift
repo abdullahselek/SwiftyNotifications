@@ -21,6 +21,9 @@ class ViewController: UIViewController, SwiftyNotificationsDelegate {
                                                      title: "Swifty Notifications",
                                                      subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI")
         notification.delegate = self
+        notification.addTouchHandler {
+
+        }
         view.addSubview(notification)
 
         customNotification = SwiftyNotifications.withStyle(style: .custom,
