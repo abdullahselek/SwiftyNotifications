@@ -223,4 +223,12 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(swiftNotifications.subtitleLabel.textColor, UIColor.white)
     }
 
+    func testAddTouchHandler() {
+        swiftNotifications.addTouchHandler {
+
+        }
+        let gesturesCount = swiftNotifications.gestureRecognizers?.count
+        XCTAssertEqual(gesturesCount, 1)
+    }
+
 }

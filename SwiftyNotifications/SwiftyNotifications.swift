@@ -226,6 +226,12 @@ public class SwiftyNotifications: UIView {
         subtitleLabel.textColor = textColor
     }
 
+    public func addTouchHandler(touchHandler: @escaping SwiftyNotificationsTouchHandler) {
+        self.touchHandler = touchHandler
+        let tapHandler = UITapGestureRecognizer(target: self, action: #selector(SwiftyNotifications.handleTap))
+        addGestureRecognizer(tapHandler)
+    }
+
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
