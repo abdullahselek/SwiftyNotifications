@@ -169,36 +169,42 @@ public class SwiftyNotifications: UIView {
             self.contentView.backgroundColor = primaryColor
             self.titleLabel.textColor = secondaryColor
             self.subtitleLabel.textColor = secondaryColor
+            break
         case .error:
             let primaryColor = UIColor.snRedColor()
             let secondaryColor = UIColor.snWhiteColor()
             self.contentView.backgroundColor = primaryColor
             self.titleLabel.textColor = secondaryColor
             self.subtitleLabel.textColor = secondaryColor
+            break
         case .success:
             let primaryColor = UIColor.snGreenColor()
             let secondaryColor = UIColor.snWhiteColor()
             self.contentView.backgroundColor = primaryColor
             self.titleLabel.textColor = secondaryColor
             self.subtitleLabel.textColor = secondaryColor
+            break
         case .info:
             let primaryColor = UIColor.snOrangeColor()
             let secondaryColor = UIColor.snWhiteColor()
             self.contentView.backgroundColor = primaryColor
             self.titleLabel.textColor = secondaryColor
             self.subtitleLabel.textColor = secondaryColor
+            break
         case .warning:
             let primaryColor = UIColor.snYellowColor()
             let secondaryColor = UIColor.snBlackColor()
             self.contentView.backgroundColor = primaryColor
             self.titleLabel.textColor = secondaryColor
             self.subtitleLabel.textColor = secondaryColor
+            break
         case .normal:
             let primaryColor = UIColor.snBlueColor()
             let secondaryColor = UIColor.snWhiteColor()
             self.contentView.backgroundColor = primaryColor
             self.titleLabel.textColor = secondaryColor
             self.subtitleLabel.textColor = secondaryColor
+            break
         }
         setAccessoryView(style: style)
     }
