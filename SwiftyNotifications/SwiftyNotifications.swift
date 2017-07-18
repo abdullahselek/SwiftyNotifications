@@ -346,9 +346,7 @@ public class SwiftyNotifications: UIView {
     }
 
     internal func handleTap() {
-        if touchHandler != nil {
-            touchHandler!()
-        }
+        touchHandler?()
     }
 
     internal func canDisplay() -> Bool {
