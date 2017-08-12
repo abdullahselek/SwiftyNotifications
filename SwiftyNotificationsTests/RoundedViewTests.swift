@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import SwiftyNotifications;
+@testable import SwiftyNotifications
 
 class RoundedViewTests: XCTestCase {
 
