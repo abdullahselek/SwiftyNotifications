@@ -195,6 +195,32 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(constraint.constant, 0)
     }
 
+    func testUpdateBottomConstraintforHiding() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftNotifications)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftNotifications.updateBottomConstraint(hide: true)
+        let constraint = viewController.view.constraints[1]
+        XCTAssertEqual(constraint.firstAttribute, .bottom)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
+        XCTAssertEqual(constraint.constant, SwiftyNotifications.notificationHeight)
+    }
+
+    func testUpdateBottomConstraintforDisplaying() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftNotifications)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftNotifications.updateBottomConstraint(hide: false)
+        let constraint = viewController.view.constraints[1]
+        XCTAssertEqual(constraint.firstAttribute, .bottom)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
+        XCTAssertEqual(constraint.constant, 0)
+    }
+
     func testSetCustomColors() {
         swiftNotifications.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
         XCTAssertEqual(swiftNotifications.contentView.backgroundColor, UIColor.cyan)
@@ -209,6 +235,10 @@ class SwiftyNotificationsTests: XCTestCase {
         }
         let gesturesCount = swiftNotifications.gestureRecognizers?.count
         XCTAssertEqual(gesturesCount, 1)
+    }
+
+    override func tearDown() {
+        swiftNotifications = nil
     }
 
 }
