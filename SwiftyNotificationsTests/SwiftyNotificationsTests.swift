@@ -82,20 +82,22 @@ class SwiftyNotificationsTests: XCTestCase {
         XCTAssertEqual(notification.frame, frame)
     }
 
-    func testWithStyle_withThreeParameter() {
+    func testWithStyle_withFourParameter() {
         let notification = SwiftyNotifications.withStyle(style: .normal,
                                                          title: "Title",
-                                                         subtitle: "Subtitle")
+                                                         subtitle: "Subtitle",
+                                                         direction: .top)
         XCTAssertNotNil(notification)
         XCTAssertEqual(notification.titleLabel.text, "Title")
         XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
     }
 
-    func testWithStyle_withFourParameters() {
+    func testWithStyle_withFiveParameters() {
         let notification = SwiftyNotifications.withStyle(style: .normal,
                                                          title: "Title",
                                                          subtitle: "Subtitle",
-                                                         dismissDelay: 1.0)
+                                                         dismissDelay: 1.0,
+                                                         direction: .top)
         XCTAssertNotNil(notification)
         XCTAssertEqual(notification.titleLabel.text, "Title")
         XCTAssertEqual(notification.subtitleLabel.text, "Subtitle")
@@ -105,7 +107,8 @@ class SwiftyNotificationsTests: XCTestCase {
         let notification = SwiftyNotifications.withStyle(style: .info,
                                                          title: "Title",
                                                          subtitle: "Subtitle",
-                                                         dismissDelay: 2.0) {
+                                                         dismissDelay: 2.0,
+                                                         direction: .top) {
 
         }
         XCTAssertNotNil(notification)

@@ -33,6 +33,11 @@ public enum SwiftyNotificationsStyle {
     case custom
 }
 
+public enum SwiftyNotificationsDirection {
+    case top
+    case bottom
+}
+
 @objc public protocol SwiftyNotificationsDelegate: class {
 
     @objc optional func willShowNotification(notification: SwiftyNotifications)
@@ -66,6 +71,7 @@ public class SwiftyNotifications: UIView {
     private var touchHandler: SwiftyNotificationsTouchHandler?
     private var topConstraint: NSLayoutConstraint!
     private var bottomConstraint: NSLayoutConstraint!
+    private var direction: SwiftyNotificationsDirection!
 
     internal static let notificationHeight = CGFloat(85.0)
 
@@ -84,22 +90,26 @@ public class SwiftyNotifications: UIView {
 
     public static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
-                                 subtitle: String) -> SwiftyNotifications {
+                                 subtitle: String,
+                                 direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
         let notification = SwiftyNotifications.withStyle(style: style,
                                                          title: title,
                                                          subtitle: subtitle,
-                                                         dismissDelay: 0)
+                                                         dismissDelay: 0,
+                                                         direction: direction)
         return notification
     }
 
     public static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
                                  subtitle: String,
-                                 dismissDelay: TimeInterval) -> SwiftyNotifications {
+                                 dismissDelay: TimeInterval,
+                                 direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
         let notification = SwiftyNotifications.withStyle(style: style,
                                                          title: title,
                                                          subtitle: subtitle,
                                                          dismissDelay: dismissDelay,
+                                                         direction: direction,
                                                          touchHandler: nil)
         return notification
     }
@@ -108,8 +118,10 @@ public class SwiftyNotifications: UIView {
                                  title: String,
                                  subtitle: String,
                                  dismissDelay: TimeInterval,
+                                 direction: SwiftyNotificationsDirection,
                                  touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
         let notification = SwiftyNotifications.instanceFromNib()
+        notification.direction = direction
         notification.leftAccessoryView.makeRound()
         notification.translatesAutoresizingMaskIntoConstraints = false
         if dismissDelay > 0 {
