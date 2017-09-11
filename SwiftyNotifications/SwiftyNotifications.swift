@@ -256,7 +256,7 @@ public class SwiftyNotifications: UIView {
         if superview == nil {
             return
         }
-        updateTopConstraint(hide: true)
+        self.direction == .top ? updateTopConstraint(hide: true) : updateBottomConstraint(hide: true)
     }
 
     internal func updateTopConstraint(hide: Bool) {
