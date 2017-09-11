@@ -19,7 +19,8 @@ class ViewController: UIViewController, SwiftyNotificationsDelegate {
 
         notification = SwiftyNotifications.withStyle(style: .info,
                                                      title: "Swifty Notifications",
-                                                     subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI")
+                                                     subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI",
+                                                     direction: .bottom)
         notification.delegate = self
         notification.addTouchHandler {
 
@@ -28,7 +29,8 @@ class ViewController: UIViewController, SwiftyNotificationsDelegate {
 
         customNotification = SwiftyNotifications.withStyle(style: .custom,
                                                            title: "Custom",
-                                                           subtitle: "Custom notification with custom image and colors")
+                                                           subtitle: "Custom notification with custom image and colors",
+                                                           direction: .top)
         customNotification.leftAccessoryView.image = UIImage(named: "apple_logo")!
         customNotification.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
         view.addSubview(customNotification)
