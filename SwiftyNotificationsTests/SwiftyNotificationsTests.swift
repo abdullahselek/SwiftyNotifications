@@ -16,6 +16,7 @@ class SwiftyNotificationsTests: XCTestCase {
 
     override func setUp() {
         swiftNotifications = SwiftyNotifications.instanceFromNib()
+        swiftNotifications.direction = .top
     }
 
     func testInstanceFromNib() {

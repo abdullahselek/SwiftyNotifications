@@ -57,6 +57,7 @@ public class SwiftyNotifications: UIView {
     @IBOutlet public weak var subtitleLabel: UILabel!
 
     public var delegate: SwiftyNotificationsDelegate?
+    public var direction: SwiftyNotificationsDirection!
 
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var subtitleLabelBottomConstraint: NSLayoutConstraint!
@@ -71,7 +72,6 @@ public class SwiftyNotifications: UIView {
     private var touchHandler: SwiftyNotificationsTouchHandler?
     private var topConstraint: NSLayoutConstraint!
     private var bottomConstraint: NSLayoutConstraint!
-    private var direction: SwiftyNotificationsDirection!
 
     internal static let notificationHeight = CGFloat(85.0)
 
@@ -140,7 +140,7 @@ public class SwiftyNotifications: UIView {
     public func show() {
         if canDisplay() {
             self.delegate?.willShowNotification?(notification: self)
-            updateTopConstraint(hide: false)
+            self.direction == .top ? updateTopConstraint(hide: false) : updateBottomConstraint(hide: false)
             UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: { 
                 self.superview?.layoutIfNeeded()
             }, completion: { (finished) in
@@ -166,7 +166,7 @@ public class SwiftyNotifications: UIView {
             self.dismissTimer!.invalidate()
             self.dismissTimer = nil
         }
-        updateTopConstraint(hide: true)
+        self.direction == .top ? updateTopConstraint(hide: true) : updateBottomConstraint(hide: true)
         UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
             self.superview?.layoutIfNeeded()
         }, completion: { (finished) in
