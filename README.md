@@ -34,7 +34,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-	pod 'SwiftyNotifications', '~>0.2'
+	pod 'SwiftyNotifications', '~>0.3'
 end
 ```
 
@@ -57,7 +57,7 @@ brew install carthage
 To integrate SwiftyNotifications into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
-github "abdullahselek/SwiftyNotifications" ~> 0.2
+github "abdullahselek/SwiftyNotifications" ~> 0.3
 ```
 
 ## Example Usage
@@ -69,7 +69,8 @@ Than initiate notification and add to your view
 ```
 let notification = SwiftyNotifications.withStyle(style: .info,
                                                  title: "Swifty Notifications",
-                                                 subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI")
+                                                 subtitle: "Highly configurable iOS UIView for presenting notifications that doesn't block the UI",
+                                                 direction: .bottom)
 view.addSubview(notification)
 ```
 
@@ -97,7 +98,8 @@ Creating custom notification
 ```
 let customNotification = SwiftyNotifications.withStyle(style: .custom,
                                                        title: "Custom",
-                                                       subtitle: "Custom notification with custom image and colors")
+                                                       subtitle: "Custom notification with custom image and colors",
+                                                       direction: .top)
 customNotification.leftAccessoryView.image = UIImage(named: "apple_logo")!
 customNotification.setCustomColors(backgroundColor: UIColor.cyan, textColor: UIColor.white)
 view.addSubview(customNotification)
@@ -109,14 +111,16 @@ Other available functions for creating notifications
 let notification = SwiftyNotifications.withStyle(style: .warning,
                                                  title: "Title",
                                                  subtitle: "Subtitle",
-                                                 dismissDelay: 3.0)
+                                                 dismissDelay: 3.0,
+                                                 direction: .top)
 ```
 > With touch handler
 ```
 let notification = SwiftyNotifications.withStyle(style: .error,
                                                  title: "Title",
                                                  subtitle: "Subtitle",
-                                                 dismissDelay: 5.0) {
+                                                 dismissDelay: 5.0,
+                                                 direction: .bottom) {
                                                             
         }
 ```
