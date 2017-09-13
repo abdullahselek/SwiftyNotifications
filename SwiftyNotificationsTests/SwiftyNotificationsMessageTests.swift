@@ -111,4 +111,15 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         XCTAssertEqual(constraint.constant, 0)
     }
 
+    func testCanDisplay_whenSuperViewNil() {
+        XCTAssertFalse(swiftyNotificationsMessage.canDisplay())
+    }
+
+    func testCanDisplay_whenSuperViewNotNil() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftyNotificationsMessage)
+        let _ = viewController.view
+        XCTAssertTrue(swiftyNotificationsMessage.canDisplay())
+    }
+
 }
