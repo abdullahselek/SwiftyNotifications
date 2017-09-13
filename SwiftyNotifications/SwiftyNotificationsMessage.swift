@@ -150,4 +150,41 @@ class SwiftyNotificationsMessage: UIView {
         touchHandler?()
     }
 
+    public func show() {
+        if canDisplay() {
+            self.delegate?.willShowNotification?(notification: self)
+            self.direction == .top ? updateTopConstraint(hide: false) : updateBottomConstraint(hide: false)
+            UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
+                self.superview?.layoutIfNeeded()
+            }, completion: { (finished) in
+                if self.dismissDelay != nil && self.dismissDelay! > 0 {
+                    self.dismissTimer = Timer.scheduledTimer(timeInterval: self.dismissDelay!,
+                                                             target: self,
+                                                             selector: #selector(SwiftyNotificationsMessage.dismiss),
+                                                             userInfo: nil,
+                                                             repeats: false)
+                }
+                self.delegate?.didShowNotification?(notification: self)
+            })
+        } else {
+            NSException(name: NSExceptionName.internalInconsistencyException,
+                        reason: "Must have a superview before calling show",
+                        userInfo: nil).raise()
+        }
+    }
+
+    public func dismiss() {
+        self.delegate?.willDismissNotification?(notification: self)
+        if self.dismissTimer != nil {
+            self.dismissTimer!.invalidate()
+            self.dismissTimer = nil
+        }
+        self.direction == .top ? updateTopConstraint(hide: true) : updateBottomConstraint(hide: true)
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
+            self.superview?.layoutIfNeeded()
+        }, completion: { (finished) in
+            self.delegate?.didDismissNotification?(notification: self)
+        })
+    }
+
 }

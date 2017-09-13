@@ -40,10 +40,10 @@ public enum SwiftyNotificationsDirection {
 
 @objc public protocol SwiftyNotificationsDelegate: class {
 
-    @objc optional func willShowNotification(notification: SwiftyNotifications)
-    @objc optional func didShowNotification(notification: SwiftyNotifications)
-    @objc optional func willDismissNotification(notification: SwiftyNotifications)
-    @objc optional func didDismissNotification(notification: SwiftyNotifications)
+    @objc optional func willShowNotification(notification: UIView)
+    @objc optional func didShowNotification(notification: UIView)
+    @objc optional func willDismissNotification(notification: UIView)
+    @objc optional func didDismissNotification(notification: UIView)
 
 }
 
