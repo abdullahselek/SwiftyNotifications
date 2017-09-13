@@ -89,7 +89,7 @@ class SwiftyNotificationsMessage: UIView {
         }
         if touchHandler != nil {
             notification.touchHandler = touchHandler
-            let tapHandler = UITapGestureRecognizer(target: notification, action: #selector(SwiftyNotifications.handleTap))
+            let tapHandler = UITapGestureRecognizer(target: notification, action: #selector(SwiftyNotificationsMessage.handleTap))
             notification.addGestureRecognizer(tapHandler)
         }
         notification.setMessage(message: message)
@@ -144,6 +144,10 @@ class SwiftyNotificationsMessage: UIView {
 
     internal func canDisplay() -> Bool {
         return self.superview != nil ? true : false
+    }
+
+    internal func handleTap() {
+        touchHandler?()
     }
 
 }
