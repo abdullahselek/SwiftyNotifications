@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1C3088DE1F69577D00A9C516 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3088DD1F69577D00A9C516 /* String+Size.swift */; };
 		1C3088E01F695CD600A9C516 /* String+SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3088DF1F695CD600A9C516 /* String+SizeTests.swift */; };
+		1C3088E41F696ED700A9C516 /* SwiftyNotificationsMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3088E31F696ED700A9C516 /* SwiftyNotificationsMessage.xib */; };
+		1C3088E61F696F2100A9C516 /* SwiftyNotificationsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3088E51F696F2100A9C516 /* SwiftyNotificationsMessage.swift */; };
+		1C3088E81F69732E00A9C516 /* SwiftyNotificationsMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3088E71F69732E00A9C516 /* SwiftyNotificationsMessageTests.swift */; };
 		A4307E591E8AE075008033EE /* SwiftyNotificationsDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4307E581E8AE075008033EE /* SwiftyNotificationsDrawings.swift */; };
 		A4307E5B1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4307E5A1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift */; };
 		A4BFCDEB1E8986410024CC26 /* SwiftyNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BFCDE11E8986410024CC26 /* SwiftyNotifications.framework */; };
@@ -34,6 +37,9 @@
 /* Begin PBXFileReference section */
 		1C3088DD1F69577D00A9C516 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		1C3088DF1F695CD600A9C516 /* String+SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SizeTests.swift"; sourceTree = "<group>"; };
+		1C3088E31F696ED700A9C516 /* SwiftyNotificationsMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftyNotificationsMessage.xib; sourceTree = "<group>"; };
+		1C3088E51F696F2100A9C516 /* SwiftyNotificationsMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsMessage.swift; sourceTree = "<group>"; };
+		1C3088E71F69732E00A9C516 /* SwiftyNotificationsMessageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsMessageTests.swift; sourceTree = "<group>"; };
 		A4307E581E8AE075008033EE /* SwiftyNotificationsDrawings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsDrawings.swift; sourceTree = "<group>"; };
 		A4307E5A1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyNotificationsDrawingsTests.swift; sourceTree = "<group>"; };
 		A4BFCDE11E8986410024CC26 /* SwiftyNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +90,7 @@
 				A4BFCDEA1E8986410024CC26 /* SwiftyNotificationsTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A4BFCDE31E8986410024CC26 /* SwiftyNotifications */ = {
@@ -95,8 +102,10 @@
 				A4BFCDFF1E898EC60024CC26 /* SwiftyNotificationsColor.swift */,
 				A4307E581E8AE075008033EE /* SwiftyNotificationsDrawings.swift */,
 				A4D504521E8C2CEA0037927E /* SwiftyNotifications.swift */,
-				A4F6C6991E8ED79F00183984 /* SwiftyNotifications.xib */,
+				1C3088E51F696F2100A9C516 /* SwiftyNotificationsMessage.swift */,
 				1C3088DD1F69577D00A9C516 /* String+Size.swift */,
+				A4F6C6991E8ED79F00183984 /* SwiftyNotifications.xib */,
+				1C3088E31F696ED700A9C516 /* SwiftyNotificationsMessage.xib */,
 			);
 			path = SwiftyNotifications;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 				A4BFCDEF1E8986410024CC26 /* SwiftyNotificationsTests.swift */,
 				A4BFCDFD1E898A410024CC26 /* RoundedViewTests.swift */,
 				A4307E5A1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift */,
+				1C3088E71F69732E00A9C516 /* SwiftyNotificationsMessageTests.swift */,
 				1C3088DF1F695CD600A9C516 /* String+SizeTests.swift */,
 				A4BFCDF11E8986410024CC26 /* Info.plist */,
 			);
@@ -207,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3088E41F696ED700A9C516 /* SwiftyNotificationsMessage.xib in Resources */,
 				A4F6C69A1E8ED79F00183984 /* SwiftyNotifications.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +240,7 @@
 				A4307E591E8AE075008033EE /* SwiftyNotificationsDrawings.swift in Sources */,
 				1C3088DE1F69577D00A9C516 /* String+Size.swift in Sources */,
 				A4BFCE001E898EC60024CC26 /* SwiftyNotificationsColor.swift in Sources */,
+				1C3088E61F696F2100A9C516 /* SwiftyNotificationsMessage.swift in Sources */,
 				A4BFCDFC1E8987D20024CC26 /* RoundedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +252,7 @@
 				A4307E5B1E8AE436008033EE /* SwiftyNotificationsDrawingsTests.swift in Sources */,
 				1C3088E01F695CD600A9C516 /* String+SizeTests.swift in Sources */,
 				A4BFCDFE1E898A410024CC26 /* RoundedViewTests.swift in Sources */,
+				1C3088E81F69732E00A9C516 /* SwiftyNotificationsMessageTests.swift in Sources */,
 				A4BFCDF01E8986410024CC26 /* SwiftyNotificationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
