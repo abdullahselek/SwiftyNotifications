@@ -59,4 +59,56 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         XCTAssertEqual(swiftyNotificationsMessage.messageLabel.text, message)
     }
 
+    func testUpdateTopConstraintforHiding() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftyNotificationsMessage)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftyNotificationsMessage.updateTopConstraint(hide: true)
+        let constraint = viewController.view.constraints[0]
+        XCTAssertEqual(constraint.firstAttribute, .top)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotificationsMessage, swiftyNotificationsMessage)
+        XCTAssertEqual(constraint.constant, -swiftyNotificationsMessage.frame.size.height)
+    }
+
+    func testUpdateTopConstraintforDisplaying() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftyNotificationsMessage)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftyNotificationsMessage.updateTopConstraint(hide: false)
+        let constraint = viewController.view.constraints[0]
+        XCTAssertEqual(constraint.firstAttribute, .top)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotificationsMessage, swiftyNotificationsMessage)
+        XCTAssertEqual(constraint.constant, 0)
+    }
+
+    func testUpdateBottomConstraintforHiding() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftyNotificationsMessage)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftyNotificationsMessage.updateBottomConstraint(hide: true)
+        let constraint = viewController.view.constraints[1]
+        XCTAssertEqual(constraint.firstAttribute, .bottom)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotificationsMessage, swiftyNotificationsMessage)
+        XCTAssertEqual(constraint.constant, swiftyNotificationsMessage.frame.size.height)
+    }
+
+    func testUpdateBottomConstraintforDisplaying() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftyNotificationsMessage)
+        let _ = viewController.view
+        let constraintCount = viewController.view.constraints.count
+        XCTAssertEqual(constraintCount, 1)
+        swiftyNotificationsMessage.updateBottomConstraint(hide: false)
+        let constraint = viewController.view.constraints[1]
+        XCTAssertEqual(constraint.firstAttribute, .bottom)
+        XCTAssertEqual(constraint.firstItem as? SwiftyNotificationsMessage, swiftyNotificationsMessage)
+        XCTAssertEqual(constraint.constant, 0)
+    }
+
 }

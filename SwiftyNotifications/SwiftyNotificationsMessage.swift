@@ -35,6 +35,9 @@ class SwiftyNotificationsMessage: UIView {
     private var dismissTimer: Timer?
     private var touchHandler: SwiftyNotificationsTouchHandler?
 
+    private var topConstraint: NSLayoutConstraint!
+    private var bottomConstraint: NSLayoutConstraint!
+
     class func instanceFromNib() -> SwiftyNotificationsMessage {
         let bundle = Bundle(for: self.classForCoder())
         return bundle.loadNibNamed("SwiftyNotificationsMessage",
@@ -97,6 +100,46 @@ class SwiftyNotificationsMessage: UIView {
         let height = message.height(withConstrainedWidth: messageLabel.frame.size.width, font: messageLabel.font)
         messageLabel.text = message
         messageLabel.frame.size.height = height
+    }
+
+    public override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        if superview == nil {
+            return
+        }
+        self.direction == .top ? updateTopConstraint(hide: true) : updateBottomConstraint(hide: true)
+    }
+
+    internal func updateTopConstraint(hide: Bool) {
+        let constant = hide == true ? -self.frame.size.height : 0
+        if topConstraint != nil && (superview?.constraints.contains(topConstraint))! {
+            topConstraint.constant = constant
+        } else {
+            topConstraint = NSLayoutConstraint(item: self,
+                                               attribute: .top,
+                                               relatedBy: .equal,
+                                               toItem: superview,
+                                               attribute: .top,
+                                               multiplier: 1.0,
+                                               constant: constant)
+            superview?.addConstraint(topConstraint)
+        }
+    }
+
+    internal func updateBottomConstraint(hide: Bool) {
+        let constant = hide == true ? self.frame.size.height : 0
+        if bottomConstraint != nil && (superview?.constraints.contains(bottomConstraint))! {
+            bottomConstraint.constant = constant
+        } else {
+            bottomConstraint = NSLayoutConstraint(item: self,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: superview,
+                                                  attribute: .bottom,
+                                                  multiplier: 1.0,
+                                                  constant: constant)
+            superview?.addConstraint(bottomConstraint)
+        }
     }
 
 }
