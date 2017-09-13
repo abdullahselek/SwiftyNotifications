@@ -29,6 +29,7 @@ class SwiftyNotificationsMessageTests: XCTestCase {
                                                                                         message: "message",
                                                                                         direction: .top)
         XCTAssertNotNil(swiftyNotificationsMessage)
+        XCTAssertEqual(swiftyNotificationsMessage.backgroundColor, UIColor.black)
     }
 
     func testInitWithFourParameters() {
@@ -37,6 +38,7 @@ class SwiftyNotificationsMessageTests: XCTestCase {
                                                                                         dismissDelay: 1.0,
                                                                                         direction: .bottom)
         XCTAssertNotNil(swiftyNotificationsMessage)
+        XCTAssertEqual(swiftyNotificationsMessage.backgroundColor, UIColor.black)
     }
 
     func testInitWithFiveParameters() {
@@ -48,6 +50,7 @@ class SwiftyNotificationsMessageTests: XCTestCase {
                                                                                             
         })
         XCTAssertNotNil(swiftyNotificationsMessage)
+        XCTAssertEqual(swiftyNotificationsMessage.backgroundColor, UIColor.black)
     }
 
 }

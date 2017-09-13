@@ -79,6 +79,7 @@ class SwiftyNotificationsMessage: UIView {
                                            touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotificationsMessage {
         let notification = SwiftyNotificationsMessage.instanceFromNib()
         notification.direction = direction
+        notification.backgroundColor = color
         notification.translatesAutoresizingMaskIntoConstraints = false
         if dismissDelay > 0 {
             notification.dismissDelay = dismissDelay
