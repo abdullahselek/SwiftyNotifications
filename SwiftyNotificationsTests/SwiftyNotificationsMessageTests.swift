@@ -53,4 +53,10 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         XCTAssertEqual(swiftyNotificationsMessage.backgroundColor, UIColor.black)
     }
 
+    func testSetMessage() {
+        let message = "message"
+        swiftyNotificationsMessage.setMessage(message: message)
+        XCTAssertEqual(swiftyNotificationsMessage.messageLabel.text, message)
+    }
+
 }

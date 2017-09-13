@@ -89,7 +89,14 @@ class SwiftyNotificationsMessage: UIView {
             let tapHandler = UITapGestureRecognizer(target: notification, action: #selector(SwiftyNotifications.handleTap))
             notification.addGestureRecognizer(tapHandler)
         }
+        notification.setMessage(message: message)
         return notification
+    }
+
+    public func setMessage(message: String) {
+        let height = message.height(withConstrainedWidth: messageLabel.frame.size.width, font: messageLabel.font)
+        messageLabel.text = message
+        messageLabel.frame.size.height = height
     }
 
 }
