@@ -183,7 +183,7 @@ class SwiftyNotificationsTests: XCTestCase {
         let constraint = viewController.view.constraints[0]
         XCTAssertEqual(constraint.firstAttribute, .top)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
-        XCTAssertEqual(constraint.constant, -SwiftyNotifications.notificationHeight)
+        XCTAssertEqual(constraint.constant, -swiftNotifications.frame.size.height)
     }
 
     func testUpdateTopConstraintforDisplaying() {
@@ -209,7 +209,7 @@ class SwiftyNotificationsTests: XCTestCase {
         let constraint = viewController.view.constraints[1]
         XCTAssertEqual(constraint.firstAttribute, .bottom)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
-        XCTAssertEqual(constraint.constant, SwiftyNotifications.notificationHeight)
+        XCTAssertEqual(constraint.constant, swiftNotifications.frame.size.height)
     }
 
     func testUpdateBottomConstraintforDisplaying() {

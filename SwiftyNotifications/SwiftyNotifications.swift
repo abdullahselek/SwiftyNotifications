@@ -73,8 +73,6 @@ public class SwiftyNotifications: UIView {
     private var topConstraint: NSLayoutConstraint!
     private var bottomConstraint: NSLayoutConstraint!
 
-    internal static let notificationHeight = CGFloat(85.0)
-
     class func instanceFromNib() -> SwiftyNotifications {
         let bundle = Bundle(for: self.classForCoder())
         return bundle.loadNibNamed("SwiftyNotifications", owner: nil, options: nil)?.first as! SwiftyNotifications
@@ -260,7 +258,7 @@ public class SwiftyNotifications: UIView {
     }
 
     internal func updateTopConstraint(hide: Bool) {
-        let constant = hide == true ? -SwiftyNotifications.notificationHeight : 0
+        let constant = hide == true ? -self.frame.size.height : 0
         if topConstraint != nil && (superview?.constraints.contains(topConstraint))! {
             topConstraint.constant = constant
         } else {
@@ -276,7 +274,7 @@ public class SwiftyNotifications: UIView {
     }
 
     internal func updateBottomConstraint(hide: Bool) {
-        let constant = hide == true ? SwiftyNotifications.notificationHeight : 0
+        let constant = hide == true ? self.frame.size.height : 0
         if bottomConstraint != nil && (superview?.constraints.contains(bottomConstraint))! {
             bottomConstraint.constant = constant
         } else {
