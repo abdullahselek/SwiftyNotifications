@@ -24,7 +24,7 @@
 
 import UIKit
 
-class SwiftyNotificationsMessage: UIView {
+public class SwiftyNotificationsMessage: UIView {
 
     @IBOutlet public weak var messageLabel: UILabel!
 
