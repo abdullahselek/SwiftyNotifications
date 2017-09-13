@@ -37,6 +37,7 @@ public class SwiftyNotificationsMessage: UIView {
 
     private var topConstraint: NSLayoutConstraint!
     private var bottomConstraint: NSLayoutConstraint!
+    private var dynamicHeight = CGFloat(40.0)
 
     class func instanceFromNib() -> SwiftyNotificationsMessage {
         let bundle = Bundle(for: self.classForCoder())
@@ -100,6 +101,8 @@ public class SwiftyNotificationsMessage: UIView {
         let height = message.height(withConstrainedWidth: messageLabel.frame.size.width, font: messageLabel.font)
         messageLabel.text = message
         messageLabel.frame.size.height = height
+        messageLabel.frame.size.width = self.frame.size.width
+        dynamicHeight = height + 20
     }
 
     public override func didMoveToSuperview() {
@@ -111,7 +114,7 @@ public class SwiftyNotificationsMessage: UIView {
     }
 
     internal func updateTopConstraint(hide: Bool) {
-        let constant = hide == true ? -self.frame.size.height : 0
+        let constant = hide == true ? -dynamicHeight : 0
         if topConstraint != nil && (superview?.constraints.contains(topConstraint))! {
             topConstraint.constant = constant
         } else {
@@ -122,12 +125,20 @@ public class SwiftyNotificationsMessage: UIView {
                                                attribute: .top,
                                                multiplier: 1.0,
                                                constant: constant)
+            let widthConstraint = NSLayoutConstraint(item: self,
+                                                     attribute: .width,
+                                                     relatedBy: .equal,
+                                                     toItem: superview,
+                                                     attribute: .width,
+                                                     multiplier: 1.0,
+                                                     constant: 0.0)
             superview?.addConstraint(topConstraint)
+            superview?.addConstraint(widthConstraint)
         }
     }
 
     internal func updateBottomConstraint(hide: Bool) {
-        let constant = hide == true ? self.frame.size.height : 0
+        let constant = hide == true ? dynamicHeight : 0
         if bottomConstraint != nil && (superview?.constraints.contains(bottomConstraint))! {
             bottomConstraint.constant = constant
         } else {
@@ -138,7 +149,15 @@ public class SwiftyNotificationsMessage: UIView {
                                                   attribute: .bottom,
                                                   multiplier: 1.0,
                                                   constant: constant)
+            let widthConstraint = NSLayoutConstraint(item: self,
+                                                     attribute: .width,
+                                                     relatedBy: .equal,
+                                                     toItem: superview,
+                                                     attribute: .width,
+                                                     multiplier: 1.0,
+                                                     constant: 0.0)
             superview?.addConstraint(bottomConstraint)
+            superview?.addConstraint(widthConstraint)
         }
     }
 

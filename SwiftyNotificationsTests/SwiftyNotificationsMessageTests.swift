@@ -64,7 +64,7 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         viewController.view.addSubview(swiftyNotificationsMessage)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftyNotificationsMessage.updateTopConstraint(hide: true)
         let constraint = viewController.view.constraints[0]
         XCTAssertEqual(constraint.firstAttribute, .top)
@@ -77,7 +77,7 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         viewController.view.addSubview(swiftyNotificationsMessage)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftyNotificationsMessage.updateTopConstraint(hide: false)
         let constraint = viewController.view.constraints[0]
         XCTAssertEqual(constraint.firstAttribute, .top)
@@ -90,9 +90,9 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         viewController.view.addSubview(swiftyNotificationsMessage)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftyNotificationsMessage.updateBottomConstraint(hide: true)
-        let constraint = viewController.view.constraints[1]
+        let constraint = viewController.view.constraints[2]
         XCTAssertEqual(constraint.firstAttribute, .bottom)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotificationsMessage, swiftyNotificationsMessage)
         XCTAssertEqual(constraint.constant, swiftyNotificationsMessage.frame.size.height)
@@ -103,9 +103,9 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         viewController.view.addSubview(swiftyNotificationsMessage)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftyNotificationsMessage.updateBottomConstraint(hide: false)
-        let constraint = viewController.view.constraints[1]
+        let constraint = viewController.view.constraints[2]
         XCTAssertEqual(constraint.firstAttribute, .bottom)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotificationsMessage, swiftyNotificationsMessage)
         XCTAssertEqual(constraint.constant, 0)
