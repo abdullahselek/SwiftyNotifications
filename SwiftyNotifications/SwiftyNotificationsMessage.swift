@@ -24,12 +24,12 @@
 
 import UIKit
 
-public class SwiftyNotificationsMessage: UIView {
+open class SwiftyNotificationsMessage: UIView {
 
-    @IBOutlet public weak var messageLabel: UILabel!
+    @IBOutlet open weak var messageLabel: UILabel!
 
-    public var delegate: SwiftyNotificationsDelegate?
-    public var direction: SwiftyNotificationsDirection!
+    open var delegate: SwiftyNotificationsDelegate?
+    open var direction: SwiftyNotificationsDirection!
 
     private var dismissDelay: TimeInterval?
     private var dismissTimer: Timer?
@@ -54,7 +54,7 @@ public class SwiftyNotificationsMessage: UIView {
         super.init(coder: aDecoder)
     }
 
-    public static func withBackgroundColor(color: UIColor,
+    open static func withBackgroundColor(color: UIColor,
                                            message: String,
                                            direction: SwiftyNotificationsDirection) -> SwiftyNotificationsMessage {
         let notification = SwiftyNotificationsMessage.withBackgroundColor(color: color,
@@ -64,7 +64,7 @@ public class SwiftyNotificationsMessage: UIView {
         return notification
     }
 
-    public static func withBackgroundColor(color: UIColor,
+    open static func withBackgroundColor(color: UIColor,
                                            message: String,
                                            dismissDelay: TimeInterval,
                                            direction: SwiftyNotificationsDirection) -> SwiftyNotificationsMessage {
@@ -76,7 +76,7 @@ public class SwiftyNotificationsMessage: UIView {
         return notification
     }
 
-    public static func withBackgroundColor(color: UIColor,
+    open static func withBackgroundColor(color: UIColor,
                                            message: String,
                                            dismissDelay: TimeInterval,
                                            direction: SwiftyNotificationsDirection,
@@ -97,7 +97,7 @@ public class SwiftyNotificationsMessage: UIView {
         return notification
     }
 
-    public func setMessage(message: String) {
+    open func setMessage(message: String) {
         let height = message.height(withConstrainedWidth: messageLabel.frame.size.width, font: messageLabel.font)
         messageLabel.text = message
         messageLabel.frame.size.height = height
@@ -105,7 +105,7 @@ public class SwiftyNotificationsMessage: UIView {
         dynamicHeight = height + 20
     }
 
-    public override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
             return
@@ -169,7 +169,7 @@ public class SwiftyNotificationsMessage: UIView {
         touchHandler?()
     }
 
-    public func show() {
+    open func show() {
         if canDisplay() {
             self.delegate?.willShowNotification?(notification: self)
             self.direction == .top ? updateTopConstraint(hide: false) : updateBottomConstraint(hide: false)
@@ -192,7 +192,7 @@ public class SwiftyNotificationsMessage: UIView {
         }
     }
 
-    public func dismiss() {
+    open func dismiss() {
         self.delegate?.willDismissNotification?(notification: self)
         if self.dismissTimer != nil {
             self.dismissTimer!.invalidate()
