@@ -24,9 +24,9 @@
 
 import UIKit
 
-class SwiftyNotificationsDrawings {
+internal class SwiftyNotificationsDrawings {
 
-    static func drawCheckmark(color: UIColor) {
+    internal static func drawCheckmark(color: UIColor) {
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 8.0, y: 37.0))
         bezierPath.addLine(to: CGPoint(x: 27.0, y: 56.0))
@@ -38,7 +38,7 @@ class SwiftyNotificationsDrawings {
         bezierPath.stroke()
     }
 
-    static func checkMarkImage(color: UIColor) -> UIImage {
+    internal static func checkMarkImage(color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 85, height: 63), false, 0)
         drawCheckmark(color: color)
         let checkmark = UIGraphicsGetImageFromCurrentImageContext()
@@ -46,7 +46,7 @@ class SwiftyNotificationsDrawings {
         return checkmark!
     }
 
-    static func drawCross(color: UIColor) {
+    internal static func drawCross(color: UIColor) {
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 10.0, y: 10.0))
         bezierPath.addLine(to: CGPoint(x: 53.0, y: 53.0))
@@ -58,7 +58,7 @@ class SwiftyNotificationsDrawings {
         bezierPath.stroke()
     }
 
-    static func crossImage(color: UIColor) -> UIImage {
+    internal static func crossImage(color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 63.0, height: 63.0), false, 0)
         drawCross(color: color)
         let cross = UIGraphicsGetImageFromCurrentImageContext()
@@ -66,7 +66,7 @@ class SwiftyNotificationsDrawings {
         return cross!
     }
 
-    static func drawInfo(color: UIColor) {
+    internal static func drawInfo(color: UIColor) {
         let info = UIBezierPath()
         info.move(to: CGPoint(x: 45.66, y: 15.96))
         info.addCurve(to: CGPoint(x: 45.66, y: 5.22),
@@ -104,7 +104,7 @@ class SwiftyNotificationsDrawings {
         info.fill()
     }
 
-    static func infoImage(color: UIColor) -> UIImage {
+    internal static func infoImage(color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 80.0, height: 80.0), false, 0)
         drawInfo(color: color)
         let info = UIGraphicsGetImageFromCurrentImageContext()
@@ -112,7 +112,7 @@ class SwiftyNotificationsDrawings {
         return info!
     }
 
-    static func drawWarning(backgroundColor: UIColor, foregroundColor: UIColor) {
+    internal static func drawWarning(backgroundColor: UIColor, foregroundColor: UIColor) {
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 54.0, y: 10.0))
         bezierPath.addLine(to: CGPoint(x: 11.0, y: 81.0))
@@ -143,7 +143,7 @@ class SwiftyNotificationsDrawings {
         oval.fill()
     }
 
-    static func warningImage(backgroundColor: UIColor, foregroundColor: UIColor) -> UIImage {
+    internal static func warningImage(backgroundColor: UIColor, foregroundColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 108.0, height: 92.0), false, 0)
         drawWarning(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
         let warning = UIGraphicsGetImageFromCurrentImageContext()
@@ -153,9 +153,9 @@ class SwiftyNotificationsDrawings {
 
 }
 
-extension UIImage {
+internal extension UIImage {
 
-    func scaleImageToSize(size: CGSize) -> UIImage {
+    internal func scaleImageToSize(size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         defer { UIGraphicsEndImageContext() }
         draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
@@ -165,7 +165,7 @@ extension UIImage {
         return image
     }
 
-    func scaleImageToFitSize(size: CGSize) -> UIImage {
+    internal func scaleImageToFitSize(size: CGSize) -> UIImage {
         let aspect = self.size.width / self.size.height
         if size.width / aspect <= size.height {
             return scaleImageToSize(size: CGSize(width: size.width, height: size.width / aspect))
