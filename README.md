@@ -34,7 +34,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-	pod 'SwiftyNotifications', '~>0.3'
+	pod 'SwiftyNotifications', '~>0.4'
 end
 ```
 
@@ -57,7 +57,7 @@ brew install carthage
 To integrate SwiftyNotifications into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
-github "abdullahselek/SwiftyNotifications" ~> 0.3
+github "abdullahselek/SwiftyNotifications" ~> 0.4
 ```
 
 ## Example Usage
@@ -123,6 +123,24 @@ let notification = SwiftyNotifications.withStyle(style: .error,
                                                  direction: .bottom) {
                                                             
         }
+```
+
+New class added for just displaying message
+```
+let swiftyNotificationsMessage = SwiftyNotificationsMessage.withBackgroundColor(color: UIColor.darkGray,
+                                                                                message: "Notification with just text",
+                                                                                direction: .top)
+view.addSubview(swiftyNotificationsMessage)
+```
+
+To display message notification
+```
+swiftyNotificationsMessage.show()
+```
+
+Dismissing message notification
+```
+swiftyNotificationsMessage.dismiss()
 ```
 
 Optional delegates that gives informations about showing and dismissing notification screen
