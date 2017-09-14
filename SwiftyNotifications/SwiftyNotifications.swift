@@ -49,15 +49,15 @@ public enum SwiftyNotificationsDirection {
 
 public typealias SwiftyNotificationsTouchHandler = () -> Void
 
-public class SwiftyNotifications: UIView {
+open class SwiftyNotifications: UIView {
 
-    @IBOutlet public weak var contentView: UIView!
-    @IBOutlet public weak var leftAccessoryView: UIImageView!
-    @IBOutlet public weak var titleLabel: UILabel!
-    @IBOutlet public weak var subtitleLabel: UILabel!
+    @IBOutlet open weak var contentView: UIView!
+    @IBOutlet open weak var leftAccessoryView: UIImageView!
+    @IBOutlet open weak var titleLabel: UILabel!
+    @IBOutlet open weak var subtitleLabel: UILabel!
 
-    public var delegate: SwiftyNotificationsDelegate?
-    public var direction: SwiftyNotificationsDirection!
+    open var delegate: SwiftyNotificationsDelegate?
+    open var direction: SwiftyNotificationsDirection!
 
     @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var subtitleLabelBottomConstraint: NSLayoutConstraint!
@@ -86,7 +86,7 @@ public class SwiftyNotifications: UIView {
         super.init(coder: aDecoder)
     }
 
-    public static func withStyle(style: SwiftyNotificationsStyle,
+    open static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
                                  subtitle: String,
                                  direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
@@ -98,7 +98,7 @@ public class SwiftyNotifications: UIView {
         return notification
     }
 
-    public static func withStyle(style: SwiftyNotificationsStyle,
+    open static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
                                  subtitle: String,
                                  dismissDelay: TimeInterval,
@@ -112,7 +112,7 @@ public class SwiftyNotifications: UIView {
         return notification
     }
 
-    public static func withStyle(style: SwiftyNotificationsStyle,
+    open static func withStyle(style: SwiftyNotificationsStyle,
                                  title: String,
                                  subtitle: String,
                                  dismissDelay: TimeInterval,
@@ -135,7 +135,7 @@ public class SwiftyNotifications: UIView {
         return notification
     }
 
-    public func show() {
+    open func show() {
         if canDisplay() {
             self.delegate?.willShowNotification?(notification: self)
             self.direction == .top ? updateTopConstraint(hide: false) : updateBottomConstraint(hide: false)
@@ -158,7 +158,7 @@ public class SwiftyNotifications: UIView {
         }
     }
 
-    public func dismiss() {
+    open func dismiss() {
         self.delegate?.willDismissNotification?(notification: self)
         if self.dismissTimer != nil {
             self.dismissTimer!.invalidate()
@@ -172,7 +172,7 @@ public class SwiftyNotifications: UIView {
         })
     }
 
-    public func customize(style: SwiftyNotificationsStyle) {
+    open func customize(style: SwiftyNotificationsStyle) {
         switch style {
         case .custom:
             let primaryColor = UIColor.white
@@ -220,7 +220,7 @@ public class SwiftyNotifications: UIView {
         setAccessoryView(style: style)
     }
 
-    public func setTitle(title: String, subtitle: String?) {
+    open func setTitle(title: String, subtitle: String?) {
         if !title.isEmpty {
             titleLabel.text = title
         }
@@ -236,20 +236,20 @@ public class SwiftyNotifications: UIView {
         subtitleLabel.text = subtitleText
     }
 
-    public func setCustomColors(backgroundColor: UIColor, textColor: UIColor) {
+    open func setCustomColors(backgroundColor: UIColor, textColor: UIColor) {
         contentView.backgroundColor = backgroundColor
         leftAccessoryView.backgroundColor = backgroundColor
         titleLabel.textColor = textColor
         subtitleLabel.textColor = textColor
     }
 
-    public func addTouchHandler(touchHandler: @escaping SwiftyNotificationsTouchHandler) {
+    open func addTouchHandler(touchHandler: @escaping SwiftyNotificationsTouchHandler) {
         self.touchHandler = touchHandler
         let tapHandler = UITapGestureRecognizer(target: self, action: #selector(SwiftyNotifications.handleTap))
         addGestureRecognizer(tapHandler)
     }
 
-    public override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
             return
