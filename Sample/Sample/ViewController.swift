@@ -76,19 +76,19 @@ class ViewController: UIViewController, SwiftyNotificationsDelegate {
 
     // MARK: SwiftyNotifications Delegates
 
-    func willShowNotification(notification: SwiftyNotifications) {
+    func willShowNotification(notification: UIView) {
 
     }
 
-    func didShowNotification(notification: SwiftyNotifications) {
+    func didShowNotification(notification: UIView) {
 
     }
 
-    func willDismissNotification(notification: SwiftyNotifications) {
+    func willDismissNotification(notification: UIView) {
 
     }
 
-    func didDismissNotification(notification: SwiftyNotifications) {
+    func didDismissNotification(notification: UIView) {
 
     }
 
