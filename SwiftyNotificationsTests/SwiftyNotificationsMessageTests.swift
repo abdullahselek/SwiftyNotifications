@@ -122,4 +122,12 @@ class SwiftyNotificationsMessageTests: XCTestCase {
         XCTAssertTrue(swiftyNotificationsMessage.canDisplay())
     }
 
+    func testAddTouchHandler() {
+        swiftyNotificationsMessage.addTouchHandler {
+
+        }
+        let gesturesCount = swiftyNotificationsMessage.gestureRecognizers?.count
+        XCTAssertEqual(gesturesCount, 1)
+    }
+
 }

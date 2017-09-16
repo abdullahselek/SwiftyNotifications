@@ -105,6 +105,12 @@ open class SwiftyNotificationsMessage: UIView {
         dynamicHeight = height + 20
     }
 
+    open func addTouchHandler(touchHandler: @escaping SwiftyNotificationsTouchHandler) {
+        self.touchHandler = touchHandler
+        let tapHandler = UITapGestureRecognizer(target: self, action: #selector(SwiftyNotifications.handleTap))
+        addGestureRecognizer(tapHandler)
+    }
+
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview == nil {
