@@ -38,12 +38,12 @@ public enum SwiftyNotificationsDirection {
     case bottom
 }
 
-@objc public protocol SwiftyNotificationsDelegate: class {
+public protocol SwiftyNotificationsDelegate: class {
 
-    @objc optional func willShowNotification(notification: UIView)
-    @objc optional func didShowNotification(notification: UIView)
-    @objc optional func willDismissNotification(notification: UIView)
-    @objc optional func didDismissNotification(notification: UIView)
+    func willShowNotification(notification: UIView)
+    func didShowNotification(notification: UIView)
+    func willDismissNotification(notification: UIView)
+    func didDismissNotification(notification: UIView)
 
 }
 
@@ -137,7 +137,7 @@ open class SwiftyNotifications: UIView {
 
     open func show() {
         if canDisplay() {
-            self.delegate?.willShowNotification?(notification: self)
+            self.delegate?.willShowNotification(notification: self)
             self.direction == .top ? updateTopConstraint(hide: false) : updateBottomConstraint(hide: false)
             UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: { 
                 self.superview?.layoutIfNeeded()
@@ -149,7 +149,7 @@ open class SwiftyNotifications: UIView {
                                                              userInfo: nil,
                                                              repeats: false)
                 }
-                self.delegate?.didShowNotification?(notification: self)
+                self.delegate?.didShowNotification(notification: self)
             })
         } else {
             NSException(name: NSExceptionName.internalInconsistencyException,
@@ -158,8 +158,8 @@ open class SwiftyNotifications: UIView {
         }
     }
 
-    open func dismiss() {
-        self.delegate?.willDismissNotification?(notification: self)
+    @objc open func dismiss() {
+        self.delegate?.willDismissNotification(notification: self)
         if self.dismissTimer != nil {
             self.dismissTimer!.invalidate()
             self.dismissTimer = nil
@@ -168,7 +168,7 @@ open class SwiftyNotifications: UIView {
         UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
             self.superview?.layoutIfNeeded()
         }, completion: { (finished) in
-            self.delegate?.didDismissNotification?(notification: self)
+            self.delegate?.didDismissNotification(notification: self)
         })
     }
 
@@ -372,7 +372,7 @@ open class SwiftyNotifications: UIView {
         }
     }
 
-    internal func handleTap() {
+    @objc internal func handleTap() {
         touchHandler?()
     }
 
