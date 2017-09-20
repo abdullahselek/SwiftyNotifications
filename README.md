@@ -18,7 +18,10 @@ Highly configurable iOS UIView for presenting notifications that doesn't block t
 
 ## Requirements
 
-iOS 8.0+ / Swift 3.0+
+iOS 8.0+ / Swift 3.0+ / Swift 4.0
+
+### Swift 3 -> v0.4
+### Swift 4 -> v0.5
 
 ## CocoaPods
 
