@@ -37,7 +37,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-	pod 'SwiftyNotifications', '~>0.4'
+	pod 'SwiftyNotifications', '~>0.5'
 end
 ```
 
@@ -60,7 +60,7 @@ brew install carthage
 To integrate SwiftyNotifications into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
-github "abdullahselek/SwiftyNotifications" ~> 0.4
+github "abdullahselek/SwiftyNotifications" ~> 0.5
 ```
 
 ## Example Usage
