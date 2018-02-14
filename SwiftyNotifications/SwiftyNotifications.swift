@@ -87,9 +87,9 @@ open class SwiftyNotifications: UIView {
     }
 
     open static func withStyle(style: SwiftyNotificationsStyle,
-                                 title: String,
-                                 subtitle: String,
-                                 direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
+                               title: String,
+                               subtitle: String,
+                               direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
         let notification = SwiftyNotifications.withStyle(style: style,
                                                          title: title,
                                                          subtitle: subtitle,
@@ -99,10 +99,10 @@ open class SwiftyNotifications: UIView {
     }
 
     open static func withStyle(style: SwiftyNotificationsStyle,
-                                 title: String,
-                                 subtitle: String,
-                                 dismissDelay: TimeInterval,
-                                 direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
+                               title: String,
+                               subtitle: String,
+                               dismissDelay: TimeInterval,
+                               direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
         let notification = SwiftyNotifications.withStyle(style: style,
                                                          title: title,
                                                          subtitle: subtitle,
@@ -113,11 +113,11 @@ open class SwiftyNotifications: UIView {
     }
 
     open static func withStyle(style: SwiftyNotificationsStyle,
-                                 title: String,
-                                 subtitle: String,
-                                 dismissDelay: TimeInterval,
-                                 direction: SwiftyNotificationsDirection,
-                                 touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
+                               title: String,
+                               subtitle: String,
+                               dismissDelay: TimeInterval,
+                               direction: SwiftyNotificationsDirection,
+                               touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
         let notification = SwiftyNotifications.instanceFromNib()
         notification.direction = direction
         notification.leftAccessoryView.makeRound()
