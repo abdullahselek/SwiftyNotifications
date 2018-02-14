@@ -254,6 +254,7 @@ open class SwiftyNotifications: UIView {
         if superview == nil {
             return
         }
+        addWidthConstraint()
         self.direction == .top ? updateTopConstraint(hide: true) : updateBottomConstraint(hide: true)
     }
 
@@ -378,6 +379,17 @@ open class SwiftyNotifications: UIView {
 
     internal func canDisplay() -> Bool {
         return self.superview != nil ? true : false
+    }
+
+    internal func addWidthConstraint() {
+        let widthConstraint = NSLayoutConstraint(item: self,
+                                                 attribute: .width,
+                                                 relatedBy: .equal,
+                                                 toItem: superview,
+                                                 attribute: .width,
+                                                 multiplier: 1.0,
+                                                 constant: 0.0)
+        superview?.addConstraint(widthConstraint)
     }
 
 }

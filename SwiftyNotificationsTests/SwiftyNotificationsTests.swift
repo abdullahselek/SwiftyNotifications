@@ -178,9 +178,9 @@ class SwiftyNotificationsTests: XCTestCase {
         viewController.view.addSubview(swiftNotifications)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftNotifications.updateTopConstraint(hide: true)
-        let constraint = viewController.view.constraints[0]
+        let constraint = viewController.view.constraints[1]
         XCTAssertEqual(constraint.firstAttribute, .top)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
         XCTAssertEqual(constraint.constant, -swiftNotifications.frame.size.height)
@@ -191,9 +191,9 @@ class SwiftyNotificationsTests: XCTestCase {
         viewController.view.addSubview(swiftNotifications)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftNotifications.updateTopConstraint(hide: false)
-        let constraint = viewController.view.constraints[0]
+        let constraint = viewController.view.constraints[1]
         XCTAssertEqual(constraint.firstAttribute, .top)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
         XCTAssertEqual(constraint.constant, 0)
@@ -204,9 +204,9 @@ class SwiftyNotificationsTests: XCTestCase {
         viewController.view.addSubview(swiftNotifications)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftNotifications.updateBottomConstraint(hide: true)
-        let constraint = viewController.view.constraints[1]
+        let constraint = viewController.view.constraints[2]
         XCTAssertEqual(constraint.firstAttribute, .bottom)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
         XCTAssertEqual(constraint.constant, swiftNotifications.frame.size.height)
@@ -217,9 +217,9 @@ class SwiftyNotificationsTests: XCTestCase {
         viewController.view.addSubview(swiftNotifications)
         let _ = viewController.view
         let constraintCount = viewController.view.constraints.count
-        XCTAssertEqual(constraintCount, 1)
+        XCTAssertEqual(constraintCount, 2)
         swiftNotifications.updateBottomConstraint(hide: false)
-        let constraint = viewController.view.constraints[1]
+        let constraint = viewController.view.constraints[2]
         XCTAssertEqual(constraint.firstAttribute, .bottom)
         XCTAssertEqual(constraint.firstItem as? SwiftyNotifications, swiftNotifications)
         XCTAssertEqual(constraint.constant, 0)
@@ -239,6 +239,14 @@ class SwiftyNotificationsTests: XCTestCase {
         }
         let gesturesCount = swiftNotifications.gestureRecognizers?.count
         XCTAssertEqual(gesturesCount, 1)
+    }
+
+    func testAddWidthConstraint() {
+        let viewController = UIViewController()
+        viewController.view.addSubview(swiftNotifications)
+        let _ = viewController.view
+        let constraint = viewController.view.constraints[0]
+        XCTAssertEqual(constraint.firstAttribute, .width)
     }
 
     override func tearDown() {
