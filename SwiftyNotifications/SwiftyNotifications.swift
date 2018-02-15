@@ -248,6 +248,12 @@ open class SwiftyNotifications: UIView {
         let tapHandler = UITapGestureRecognizer(target: self, action: #selector(SwiftyNotifications.handleTap))
         addGestureRecognizer(tapHandler)
     }
+    
+    open func addSwipeGestureRecognizer(direction: UISwipeGestureRecognizerDirection) {
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissView(gesture:)))
+        swipeGestureRecognizer.direction = direction
+        self.addGestureRecognizer(swipeGestureRecognizer)
+    }
 
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -375,6 +381,44 @@ open class SwiftyNotifications: UIView {
 
     @objc internal func handleTap() {
         touchHandler?()
+    }
+    
+    @objc func dismissView(gesture: UISwipeGestureRecognizer) {
+        guard let window = UIApplication.shared.keyWindow, let view = gesture.view else {
+            return
+        }
+        var frame: CGRect!
+        switch gesture.direction {
+        case .right:
+            frame = CGRect(x: view.frame.width,
+                           y: view.frame.origin.y,
+                           width: view.frame.width,
+                           height: view.frame.height)
+            break
+        case .left:
+            frame = CGRect(x: -view.frame.width,
+                           y: view.frame.origin.y,
+                           width: view.frame.width,
+                           height: view.frame.height)
+            break
+        case .up:
+            frame = CGRect(x: 0.0,
+                           y:-view.frame.height,
+                           width: view.frame.width,
+                           height: view.frame.height)
+            break
+        case .down:
+            frame = CGRect(x: 0.0,
+                           y: window.frame.height + view.frame.height,
+                           width: view.frame.width,
+                           height: view.frame.height)
+            break
+        default:
+            break
+        }
+        UIView.animate(withDuration: 0.4) {
+            view.frame = frame
+        }
     }
 
     internal func canDisplay() -> Bool {

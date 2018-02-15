@@ -240,6 +240,11 @@ class SwiftyNotificationsTests: XCTestCase {
         let gesturesCount = swiftNotifications.gestureRecognizers?.count
         XCTAssertEqual(gesturesCount, 1)
     }
+    
+    func testAddSwipeGestureRecognizer() {
+        swiftNotifications.addSwipeGestureRecognizer(direction: .left)
+        XCTAssertEqual(swiftNotifications.gestureRecognizers?.count, 1)
+    }
 
     func testAddWidthConstraint() {
         let viewController = UIViewController()
