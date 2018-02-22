@@ -387,6 +387,7 @@ open class SwiftyNotifications: UIView {
         guard let window = UIApplication.shared.keyWindow, let view = gesture.view else {
             return
         }
+        self.delegate?.willDismissNotification(notification: self)
         var frame: CGRect!
         switch gesture.direction {
         case .right:
@@ -416,9 +417,11 @@ open class SwiftyNotifications: UIView {
         default:
             break
         }
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .allowAnimatedContent, animations: {
             view.frame = frame
-        }
+        }, completion: { (finished) in
+            self.delegate?.didDismissNotification(notification: self)
+        })
     }
 
     internal func canDisplay() -> Bool {
