@@ -25,6 +25,7 @@ class ViewController: UIViewController, SwiftyNotificationsDelegate {
         notification.addTouchHandler {
 
         }
+        notification.addSwipeGestureRecognizer(direction: .down)
         view.addSubview(notification)
 
         customNotification = SwiftyNotifications.withStyle(style: .custom,
