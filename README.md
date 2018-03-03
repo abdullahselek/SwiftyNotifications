@@ -20,7 +20,7 @@ Highly configurable iOS UIView for presenting notifications that doesn't block t
 
 | SwiftyNotifications Version | Minimum iOS Target  | Swift Version |
 |:--------------------:|:---------------------------:|:---------------------------:|
-| 0.5 | 8.0 | 4.0 |
+| 0.5.1 | 8.0 | 4.0 |
 | 0.4 | 8.0 | 3.x |
 
 ## CocoaPods
@@ -37,7 +37,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-	pod 'SwiftyNotifications', '~>0.5'
+	pod 'SwiftyNotifications', '~>0.5.1'
 end
 ```
 
@@ -60,7 +60,7 @@ brew install carthage
 To integrate SwiftyNotifications into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
-github "abdullahselek/SwiftyNotifications" ~> 0.5
+github "abdullahselek/SwiftyNotifications" ~> 0.5.1
 ```
 
 ## Example Usage
