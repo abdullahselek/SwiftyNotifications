@@ -158,3 +158,14 @@ notification.addTouchHandler {
 
         }
 ```
+
+Add a swipe gesture recognizer to dismiss notification with a swipe direction
+```
+notification.addSwipeGestureRecognizer(direction: .down)
+```
+
+Possible swipe directions
+- right
+- left
+- up
+- down
