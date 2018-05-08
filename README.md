@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/abdullahselek/SwiftyNotifications.svg?branch=master)](https://travis-ci.org/abdullahselek/SwiftyNotifications)
-![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftyNotifications.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftyNotifications.svg)](http://cocoapods.org/pods/SwiftyNotifications)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Coverage Status](https://coveralls.io/repos/github/abdullahselek/SwiftyNotifications/badge.svg?branch=master)](https://coveralls.io/github/abdullahselek/SwiftyNotifications?branch=master)
 ![Platform](https://img.shields.io/cocoapods/p/SwiftyNotifications.svg?style=flat)
