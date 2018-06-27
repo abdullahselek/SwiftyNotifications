@@ -5,7 +5,7 @@
 ![Platform](https://img.shields.io/cocoapods/p/SwiftyNotifications.svg?style=flat)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
-# SwiftyNotifications
+![SwiftyNotifications](https://github.com/Tobaloidee/SwiftyNotifications/blob/master/Screenshots/logo/logotype.png)
 
 Highly configurable iOS UIView for presenting notifications that doesn't block the UI.
 
