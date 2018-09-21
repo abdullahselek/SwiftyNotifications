@@ -15,7 +15,7 @@
     "tag": "0.5.2"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "SwiftyNotifications/*.swift",
   "resources": "SwiftyNotifications/*.xib",

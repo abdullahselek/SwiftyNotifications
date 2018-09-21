@@ -86,10 +86,10 @@ open class SwiftyNotifications: UIView {
         super.init(coder: aDecoder)
     }
 
-    open static func withStyle(style: SwiftyNotificationsStyle,
-                               title: String,
-                               subtitle: String,
-                               direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
+                                 subtitle: String,
+                                 direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
         let notification = SwiftyNotifications.withStyle(style: style,
                                                          title: title,
                                                          subtitle: subtitle,
@@ -98,11 +98,11 @@ open class SwiftyNotifications: UIView {
         return notification
     }
 
-    open static func withStyle(style: SwiftyNotificationsStyle,
-                               title: String,
-                               subtitle: String,
-                               dismissDelay: TimeInterval,
-                               direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
+                                 subtitle: String,
+                                 dismissDelay: TimeInterval,
+                                 direction: SwiftyNotificationsDirection) -> SwiftyNotifications {
         let notification = SwiftyNotifications.withStyle(style: style,
                                                          title: title,
                                                          subtitle: subtitle,
@@ -112,12 +112,12 @@ open class SwiftyNotifications: UIView {
         return notification
     }
 
-    open static func withStyle(style: SwiftyNotificationsStyle,
-                               title: String,
-                               subtitle: String,
-                               dismissDelay: TimeInterval,
-                               direction: SwiftyNotificationsDirection,
-                               touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
+    public static func withStyle(style: SwiftyNotificationsStyle,
+                                 title: String,
+                                 subtitle: String,
+                                 dismissDelay: TimeInterval,
+                                 direction: SwiftyNotificationsDirection,
+                                 touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotifications {
         let notification = SwiftyNotifications.instanceFromNib()
         notification.direction = direction
         notification.leftAccessoryView.makeRound()
@@ -249,7 +249,7 @@ open class SwiftyNotifications: UIView {
         addGestureRecognizer(tapHandler)
     }
     
-    open func addSwipeGestureRecognizer(direction: UISwipeGestureRecognizerDirection) {
+    open func addSwipeGestureRecognizer(direction: UISwipeGestureRecognizer.Direction) {
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(dismissView(gesture:)))
         swipeGestureRecognizer.direction = direction
         self.addGestureRecognizer(swipeGestureRecognizer)
@@ -296,7 +296,7 @@ open class SwiftyNotifications: UIView {
         }
     }
 
-    internal func addBlurView(blurStyle: UIBlurEffectStyle) {
+    internal func addBlurView(blurStyle: UIBlurEffect.Style) {
         let blurEffect = UIBlurEffect(style: blurStyle)
         blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false

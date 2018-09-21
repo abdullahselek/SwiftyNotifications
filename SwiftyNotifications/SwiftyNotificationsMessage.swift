@@ -54,9 +54,9 @@ open class SwiftyNotificationsMessage: UIView {
         super.init(coder: aDecoder)
     }
 
-    open static func withBackgroundColor(color: UIColor,
-                                         message: String,
-                                         direction: SwiftyNotificationsDirection) -> SwiftyNotificationsMessage {
+    public static func withBackgroundColor(color: UIColor,
+                                           message: String,
+                                           direction: SwiftyNotificationsDirection) -> SwiftyNotificationsMessage {
         let notification = SwiftyNotificationsMessage.withBackgroundColor(color: color,
                                                                           message: message,
                                                                           dismissDelay: 0,
@@ -64,10 +64,10 @@ open class SwiftyNotificationsMessage: UIView {
         return notification
     }
 
-    open static func withBackgroundColor(color: UIColor,
-                                         message: String,
-                                         dismissDelay: TimeInterval,
-                                         direction: SwiftyNotificationsDirection) -> SwiftyNotificationsMessage {
+    public static func withBackgroundColor(color: UIColor,
+                                           message: String,
+                                           dismissDelay: TimeInterval,
+                                           direction: SwiftyNotificationsDirection) -> SwiftyNotificationsMessage {
         let notification = SwiftyNotificationsMessage.withBackgroundColor(color: color,
                                                                           message: message,
                                                                           dismissDelay: dismissDelay,
@@ -76,11 +76,11 @@ open class SwiftyNotificationsMessage: UIView {
         return notification
     }
 
-    open static func withBackgroundColor(color: UIColor,
-                                         message: String,
-                                         dismissDelay: TimeInterval,
-                                         direction: SwiftyNotificationsDirection,
-                                         touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotificationsMessage {
+    public static func withBackgroundColor(color: UIColor,
+                                           message: String,
+                                           dismissDelay: TimeInterval,
+                                           direction: SwiftyNotificationsDirection,
+                                           touchHandler: SwiftyNotificationsTouchHandler?) -> SwiftyNotificationsMessage {
         let notification = SwiftyNotificationsMessage.instanceFromNib()
         notification.direction = direction
         notification.backgroundColor = color

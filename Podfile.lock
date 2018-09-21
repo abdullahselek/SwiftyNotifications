@@ -6,11 +6,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   SwiftyNotifications:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
-  SwiftyNotifications: 5e812a07af125b71ca5f49d9f4e1a9ec3fba0151
+  SwiftyNotifications: 068f7ab6e39cabe7fdb6f00f19832528affb4a43
 
 PODFILE CHECKSUM: 1be790d2b9e3e455db7dd5e206eaa26dbe5f19b0
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
