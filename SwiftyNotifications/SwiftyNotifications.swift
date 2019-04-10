@@ -304,14 +304,14 @@ open class SwiftyNotifications: UIView {
         vibrancyView = UIVisualEffectView(effect: visualEffect)
         vibrancyView.translatesAutoresizingMaskIntoConstraints = false
         insertSubview(blurView, belowSubview: contentView)
-        addConstraint(NSLayoutConstraint(item: blurView,
+        addConstraint(NSLayoutConstraint(item: blurView!,
                                          attribute: .height,
                                          relatedBy: .equal,
                                          toItem: self,
                                          attribute: .height,
                                          multiplier: 1.0,
                                          constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: blurView,
+        addConstraint(NSLayoutConstraint(item: blurView!,
                                          attribute: .width,
                                          relatedBy: .equal,
                                          toItem: self,
@@ -319,14 +319,14 @@ open class SwiftyNotifications: UIView {
                                          multiplier: 1.0,
                                          constant: 0.0))
         insertSubview(vibrancyView, belowSubview: contentView)
-        addConstraint(NSLayoutConstraint(item: vibrancyView,
+        addConstraint(NSLayoutConstraint(item: vibrancyView!,
                                          attribute: .height,
                                          relatedBy: .equal,
                                          toItem: self,
                                          attribute: .height,
                                          multiplier: 1.0,
                                          constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: vibrancyView,
+        addConstraint(NSLayoutConstraint(item: vibrancyView!,
                                          attribute: .width,
                                          relatedBy: .equal,
                                          toItem: self,

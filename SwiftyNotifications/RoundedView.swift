@@ -26,7 +26,7 @@ import UIKit
 
 internal extension UIView {
 
-    internal func makeRound() {
+    func makeRound() {
         self.contentMode = .scaleAspectFit
         self.clipsToBounds = true
         var frame = self.frame
@@ -44,7 +44,7 @@ internal extension UIView {
         self.layoutIfNeeded()
     }
 
-    internal func makeRoundWithBorderWidth(borderWidth: CGFloat, borderColor: UIColor) {
+    func makeRoundWithBorderWidth(borderWidth: CGFloat, borderColor: UIColor) {
         makeRound()
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor

@@ -155,7 +155,7 @@ internal class SwiftyNotificationsDrawings {
 
 internal extension UIImage {
 
-    internal func scaleImageToSize(size: CGSize) -> UIImage {
+    func scaleImageToSize(size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         defer { UIGraphicsEndImageContext() }
         draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
@@ -165,7 +165,7 @@ internal extension UIImage {
         return image
     }
 
-    internal func scaleImageToFitSize(size: CGSize) -> UIImage {
+    func scaleImageToFitSize(size: CGSize) -> UIImage {
         let aspect = self.size.width / self.size.height
         if size.width / aspect <= size.height {
             return scaleImageToSize(size: CGSize(width: size.width, height: size.width / aspect))

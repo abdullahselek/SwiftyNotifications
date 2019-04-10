@@ -26,7 +26,7 @@ import Foundation
 
 internal extension String {
 
-    internal func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin,
@@ -36,7 +36,7 @@ internal extension String {
         return ceil(boundingBox.height)
     }
 
-    internal func width(withConstraintedHeight height: CGFloat, font: UIFont) -> CGFloat {
+    func width(withConstraintedHeight height: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
         let boundingBox = self.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin,
