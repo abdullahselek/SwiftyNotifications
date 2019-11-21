@@ -121,7 +121,15 @@ open class SwiftyNotificationsMessage: UIView {
     }
 
     internal func updateTopConstraint(hide: Bool) {
-        let constant = hide == true ? -dynamicHeight : 0
+        var topSafeAreaHeight: CGFloat = 0
+
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.windows[0]
+            let safeFrame = window.safeAreaLayoutGuide.layoutFrame
+            topSafeAreaHeight = safeFrame.minY
+        }
+
+        let constant = hide == true ? -(dynamicHeight + topSafeAreaHeight) : 0
         if topConstraint != nil && (superview?.constraints.contains(topConstraint))! {
             topConstraint.constant = constant
         } else {
@@ -145,7 +153,15 @@ open class SwiftyNotificationsMessage: UIView {
     }
 
     internal func updateBottomConstraint(hide: Bool) {
-        let constant = hide == true ? dynamicHeight : 0
+        var bottomSafeAreaHeight: CGFloat = 0
+
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.windows[0]
+            let safeFrame = window.safeAreaLayoutGuide.layoutFrame
+            bottomSafeAreaHeight = window.frame.maxY - safeFrame.maxY
+        }
+
+        let constant = hide == true ? dynamicHeight + bottomSafeAreaHeight : 0
         if bottomConstraint != nil && (superview?.constraints.contains(bottomConstraint))! {
             bottomConstraint.constant = constant
         } else {

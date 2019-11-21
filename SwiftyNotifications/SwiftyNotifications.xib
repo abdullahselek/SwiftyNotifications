@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -63,11 +61,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="y2S-Yj-LOp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2qa-qt-hsj"/>
-                <constraint firstItem="y2S-Yj-LOp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HPg-FV-nGe"/>
-                <constraint firstAttribute="bottom" secondItem="y2S-Yj-LOp" secondAttribute="bottom" id="i93-D5-DwO"/>
+                <constraint firstItem="y2S-Yj-LOp" firstAttribute="bottom" secondItem="PsR-VP-kAz" secondAttribute="bottom" id="U7F-Lv-DsU"/>
+                <constraint firstItem="y2S-Yj-LOp" firstAttribute="top" secondItem="PsR-VP-kAz" secondAttribute="top" id="fpx-0h-XBJ"/>
                 <constraint firstAttribute="trailing" secondItem="y2S-Yj-LOp" secondAttribute="trailing" id="tUc-yc-Vi0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="PsR-VP-kAz"/>
             <connections>
                 <outlet property="contentView" destination="y2S-Yj-LOp" id="4TH-33-Gjy"/>
                 <outlet property="leftAccessoryView" destination="dhn-cQ-yz1" id="4mI-p1-lND"/>
