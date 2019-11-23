@@ -267,7 +267,7 @@ open class SwiftyNotifications: UIView {
     internal func updateTopConstraint(hide: Bool) {
         var topSafeAreaHeight: CGFloat = 0
 
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, *), UIApplication.shared.windows.count > 0  {
             let window = UIApplication.shared.windows[0]
             let safeFrame = window.safeAreaLayoutGuide.layoutFrame
             topSafeAreaHeight = safeFrame.minY
@@ -291,7 +291,7 @@ open class SwiftyNotifications: UIView {
     internal func updateBottomConstraint(hide: Bool) {
         var bottomSafeAreaHeight: CGFloat = 0
 
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, *), UIApplication.shared.windows.count > 0 {
             let window = UIApplication.shared.windows[0]
             let safeFrame = window.safeAreaLayoutGuide.layoutFrame
             bottomSafeAreaHeight = window.frame.maxY - safeFrame.maxY
