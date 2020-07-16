@@ -1,5 +1,5 @@
 PODS:
-  - SwiftyNotifications (0.5.4)
+  - SwiftyNotifications (0.5.4.1)
 
 DEPENDENCIES:
   - SwiftyNotifications (from `.`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  SwiftyNotifications: c59be357e8194eb921ac7042a9040fb6999d3850
+  SwiftyNotifications: e65a7192de446f8319fcadecf0e5f989e3d4d876
 
 PODFILE CHECKSUM: b369a10021a959997013c2b6e33933dfe509656a
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
