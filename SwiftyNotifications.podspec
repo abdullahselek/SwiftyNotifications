@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                  = 'SwiftyNotifications'
-    s.version               = '0.5.4.1'
+    s.version               = '0.6.0'
     s.summary               = 'Highly configurable iOS UIView for presenting notifications that does not block the UI.'
     s.homepage              = 'https://github.com/abdullahselek/SwiftyNotifications'
     s.license               = {
@@ -19,5 +19,6 @@ Pod::Spec.new do |s|
     s.source_files          = 'SwiftyNotifications/*.swift'
     s.resources             = 'SwiftyNotifications/*.xib'
     s.requires_arc          = true
+    s.swift_versions        = ['5.0', '5.1', '5.2', '5.3']
 
 end
