@@ -400,7 +400,7 @@ open class SwiftyNotifications: UIView {
     }
     
     @objc func dismissView(gesture: UISwipeGestureRecognizer) {
-        guard let window = UIApplication.shared.keyWindow, let view = gesture.view else {
+        guard let window = UIWindow.key, let view = gesture.view else {
             return
         }
         self.delegate?.willDismissNotification(notification: self)
