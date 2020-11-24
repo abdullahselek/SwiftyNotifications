@@ -1,4 +1,4 @@
-[![ASCollectionView CI](https://github.com/abdullahselek/SwiftyNotifications/workflows/SwiftyNotifications%20CI/badge.svg)](https://github.com/abdullahselek/SwiftyNotifications/actions)
+[![SwiftyNotifications CI](https://github.com/abdullahselek/SwiftyNotifications/workflows/SwiftyNotifications%20CI/badge.svg)](https://github.com/abdullahselek/SwiftyNotifications/actions)
 [![Build Status](https://travis-ci.org/abdullahselek/SwiftyNotifications.svg?branch=master)](https://travis-ci.org/abdullahselek/SwiftyNotifications)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftyNotifications.svg)](http://cocoapods.org/pods/SwiftyNotifications)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -74,6 +74,12 @@ Modify your Package.swift file to include the following dependency:
 ```
 .package(url: "https://github.com/abdullahselek/SwiftyNotifications.git", from: "0.6.0")
 ```
+
+## XCFramework
+
+XCFrameworks require Xcode 11 or later and integration is very similar to integration of .framework format. Please use script [scripts/build-framework.sh](scripts/build-framework.sh) to generate binary SwiftyNotifications.xcframework archive that you can use as a dependency in Xcode.
+
+SwiftyNotifications.xcframework is a Release (Optimized) binary that offer best available Swift code performance.
 
 ## Example Usage
 ```
