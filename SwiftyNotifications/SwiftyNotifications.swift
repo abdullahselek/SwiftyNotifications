@@ -38,7 +38,7 @@ public enum SwiftyNotificationsDirection {
     case bottom
 }
 
-public protocol SwiftyNotificationsDelegate: class {
+public protocol SwiftyNotificationsDelegate: AnyObject {
 
     func willShowNotification(notification: UIView)
     func didShowNotification(notification: UIView)
